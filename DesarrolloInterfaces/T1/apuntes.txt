@@ -1,0 +1,4 @@
+Apuntes PDA Restaurante
+	-Botón de volver siempre en el mismo sitio.
+	-Que se puedan editar cantidades de alguna forma
+	
