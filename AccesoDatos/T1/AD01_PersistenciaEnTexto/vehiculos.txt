@@ -1,0 +1,3 @@
+Vehiculo {matricula=1234ABC, marca=Toyota, modelo=Corolla, tipo=Coche}
+Vehiculo {matricula=5678DEF, marca=Ford, modelo=Transit, tipo=Furgón}
+Vehiculo {matricula=9101GHI, marca=Yamaha, modelo=R6, tipo=Moto}
