@@ -3,7 +3,7 @@
  */
 fun main() {
 	val str: String = "zapatos"
-    var count: Int = 0;
+    var count: Int = 0
     
     for (i in 0..str.length-1) {
         var c: Char = str.get(i)
