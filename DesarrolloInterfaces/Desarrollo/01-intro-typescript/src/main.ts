@@ -5,6 +5,7 @@ import './topics/di32.ts'
 import './topics/di33.ts'
 import './topics/di34.ts'
 import './topics/04-tarea-tipos.ts'
+import './topics/di36.ts'
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
