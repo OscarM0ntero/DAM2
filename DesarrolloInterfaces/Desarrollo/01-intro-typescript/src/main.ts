@@ -3,6 +3,7 @@ import './topics/01-tipos-basicos'
 import './topics/02-objeto-interfaz.ts'
 import './topics/di32.ts'
 import './topics/di33.ts'
+import './topics/di34.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
