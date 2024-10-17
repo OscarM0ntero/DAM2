@@ -4,6 +4,8 @@ import './topics/02-objeto-interfaz.ts'
 import './topics/di32.ts'
 import './topics/di33.ts'
 import './topics/di34.ts'
+import './topics/04-tarea-tipos.ts'
+
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
