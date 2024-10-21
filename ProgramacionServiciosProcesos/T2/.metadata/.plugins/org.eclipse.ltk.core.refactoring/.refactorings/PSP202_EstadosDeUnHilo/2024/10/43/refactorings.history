@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;PSP202_EstadosDeUnHilo&apos;&#x0D;&#x0A;- Original project: &apos;PSP202_EstadosDeUnHilo&apos;&#x0D;&#x0A;- Original element: &apos;PSP202_EstadosDeUnHilo/src/monohilo&apos;" description="Delete element" element1="/src&lt;monohilo" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1729531355360" subPackages="false" version="1.0"/>
+</session>

@@ -1,0 +1,7 @@
+package ratones;
+
+public class Raton
+{
+	String nombre;
+	
+}
