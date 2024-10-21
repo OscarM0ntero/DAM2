@@ -5,7 +5,6 @@ interface CentroEducativo {
     telefono: string
 }
 
-
 interface Matricula {
     modulosProfesionales: string[],
     cicloFormativo: string,
@@ -54,9 +53,10 @@ const alumno2: AlumnoFP = {
 }
 
 // Mostrar los objetos en modo tabla
-console.table([alumno1, alumno2]);
+console.table(alumno1);
+console.table(alumno2);
 
-// Desestructuración para mostrar los datos específicos solicitados
+// Desestructuración
 const { nombre, apellidos, matricula: { cicloFormativo, centroEducativo: { centro } } } = alumno1;
 console.log(`Alumno: ${nombre} ${apellidos}`);
 console.log(`Ciclo Formativo: ${cicloFormativo}`);
