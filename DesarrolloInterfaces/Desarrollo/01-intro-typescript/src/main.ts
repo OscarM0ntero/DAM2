@@ -7,6 +7,8 @@ import './topics/di34.ts'
 import './topics/04-tarea-tipos.ts'
 import './topics/di36.ts'
 import './topics/di37.ts'
+import './topics/06-desest-funciones.ts'
+
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
