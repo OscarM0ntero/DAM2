@@ -8,6 +8,7 @@ import './topics/04-tarea-tipos.ts'
 import './topics/di36.ts'
 import './topics/di37.ts'
 import './topics/06-desest-funciones.ts'
+import './topics/di310.ts'
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
