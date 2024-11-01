@@ -9,6 +9,7 @@ import './topics/di36.ts'
 import './topics/di37.ts'
 import './topics/06-desest-funciones.ts'
 import './topics/di310.ts'
+import './topics/di311.ts'
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
