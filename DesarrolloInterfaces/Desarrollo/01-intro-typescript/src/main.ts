@@ -10,6 +10,8 @@ import './topics/di37.ts'
 import './topics/06-desest-funciones.ts'
 import './topics/di310.ts'
 import './topics/di311.ts'
+import './topics/di312.ts'
+import './topics/di313.ts'
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
