@@ -12,6 +12,7 @@ import './topics/di310.ts'
 import './topics/di311.ts'
 import './topics/di312.ts'
 import './topics/di313.ts'
+import './topics/di314.ts'
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
