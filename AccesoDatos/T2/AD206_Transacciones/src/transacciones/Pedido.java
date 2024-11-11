@@ -6,8 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Pedido
 {
@@ -66,69 +68,144 @@ public class Pedido
 	
 	public void ejecutar()
 	{
-		int stockArticulo = 0;
-		try (Connection connection = DriverManager.getConnection(Tienda.URL, Tienda.usuario, Tienda.contrasenia);
-				PreparedStatement stmt = connection
-						.prepareStatement(String.format("SELECT existencias FROM articulos WHERE codart = %d", this.cantidad)))
+		int existenciasArticulo = 0;
+		try (Connection connection = DriverManager.getConnection(Tienda.URL, Tienda.usuario, Tienda.contrasenia))
 		{
-			ResultSet rs = stmt.executeQuery();
-			if (rs.next())
+			connection.setAutoCommit(false);
+			// Comprobamos que has suficiente existencias del articulo
+			try (
+					PreparedStatement stmt = connection.prepareStatement
+					("SELECT existencias FROM articulos WHERE codart = ?")
+				)
 			{
-				stockArticulo = rs.getInt("existencias");
+				stmt.setInt(1, this.codart);
+				ResultSet rs = stmt.executeQuery();
+				if (rs.next())
+				{
+					existenciasArticulo = rs.getInt("existencias");
+				}
 			}
-		} catch (SQLException e)
+			
+			// Si hay suficiente existencia, ejecutamos las operaciones
+			if(existenciasArticulo >= this.cantidad)
+			{
+				int newExistencias = existenciasArticulo - this.cantidad;
+				int rowsAffected = 0;
+				boolean allGood = true;
+				int codigoPedido = 0;
+				int codigoRider = 0;
+				
+				// Insetartamos el pedido y actualizamos el stock
+				try (
+						PreparedStatement insertStmt = connection.prepareStatement
+						("INSERT INTO pedidos (fecha, codcli, direccion, codart, cantidad) VALUES (?, ?, ?, ?, ?)");
+						PreparedStatement updateStmt = connection.prepareStatement
+						("UPDATE articulos SET existencias = ? WHERE codart = ?")
+					)
+				{
+					insertStmt.setTimestamp(1, Timestamp.valueOf(LocalDateTime.now()));
+					insertStmt.setInt(2, this.codcli);
+					insertStmt.setString(3, this.direcion);
+					insertStmt.setInt(4, this.codart);
+					insertStmt.setInt(5, this.cantidad);
+					updateStmt.setInt(1, newExistencias);
+					updateStmt.setInt(2, this.codart);
+					
+					if (insertStmt.executeUpdate() == 0)
+					{
+						System.out.println("Pedido no insertado.");
+						allGood = false;
+					}
+					if (updateStmt.executeUpdate() == 0)
+					{
+						System.out.println("Existencia no actualizada.");
+						allGood = false;
+					}
+				}
+				// Obtenemos el codped del pedido que acabamos de asignar
+				try (
+						PreparedStatement stmt = connection.prepareStatement
+						(
+							"SELECT max(codped) AS cod FROM pedidos"
+						)
+					)
+				{
+					ResultSet rs = stmt.executeQuery();
+					if (rs.next())
+					{
+						codigoPedido = rs.getInt("cod");
+					}
+					System.out.println("Codigo pedido: " + codigoPedido);
+				}
+				// Obtenemos una lista de los riders disponibles
+				try (
+						PreparedStatement stmt = connection.prepareStatement
+						(
+							"SELECT * FROM riders WHERE disponible = 1"
+						)
+					)
+				{
+					ResultSet rs = stmt.executeQuery();
+					List<Integer> ridersDisponibles = new ArrayList<Integer>();
+					while (rs.next())
+					{
+						ridersDisponibles.add(rs.getInt("codrider"));
+					}
+					// Una vez tenemos una lista con los riders disponibles, seleccionamos uno aleatorio (si hay riders disponibles)
+					if(ridersDisponibles.isEmpty())
+					{
+						System.out.println("Rider no disponible.");
+						allGood = false;
+					}
+					else
+						codigoRider = ridersDisponibles.get((new Random()).nextInt(ridersDisponibles.size()));
+				}
+				// Creamos el envio y ponemos al rider como no disponble
+				try (
+						PreparedStatement insertStmt = connection.prepareStatement
+						("INSERT INTO envios (codped, codrider, terminado) VALUES (?, ?, 0)");
+						PreparedStatement updateStmt = connection.prepareStatement
+						("UPDATE riders SET disponible = ? WHERE codrider = ?")
+					)
+				{
+					insertStmt.setInt(1, codigoPedido);
+					insertStmt.setInt(2, codigoRider);
+					updateStmt.setInt(1, 0);
+					updateStmt.setInt(2, codigoRider);
+					
+					if (insertStmt.executeUpdate() == 0)
+					{
+						System.out.println("Envio no insertado.");
+						allGood = false;
+					}
+					if (updateStmt.executeUpdate() == 0)
+					{
+						System.out.println("Estado de rider no actualizado.");
+						allGood = false;
+					}
+				}
+				
+				if(allGood)
+				{
+					System.out.println("Pedido registrado.");
+					connection.commit();
+				}
+				else
+				{
+					System.out.println("Pedido NO registrado.");
+					connection.rollback();
+				}
+			}
+			else
+			{
+				System.out.println("No hay stock suficiente para este pedido.");
+			}
+			
+		}
+		catch (SQLException e)
 		{
 			e.printStackTrace();
 		}
-		
-		if(stockArticulo >= this.cantidad)
-		{
-			try (Connection connection = DriverManager.getConnection(Tienda.URL, Tienda.usuario, Tienda.contrasenia))
-			{
-				connection.setAutoCommit(false);
-				
-					// Restar el número de tickets solicitados
-					int newAvailableTickets = ticketsDisponibles - ticketsAComprar;
-
-					// Actualizar la base de datos
-					try (PreparedStatement stmt = connection
-							.prepareStatement("INSERT INTO pedidos (fecha, codcli, direccion, codart, cantidad) VALUES (?, ?, ?, ?, ?)"))
-					{
-						stmt.setTimestamp(1, Timestamp.valueOf(LocalDateTime.now()));
-						stmt.setInt(2, this.codcli);
-						stmt.setString(3, this.direcion);
-						stmt.setInt(4, this.codart);
-						stmt.setInt(5, this.cantidad);
-						
-						int rowsAffected = stmt.executeUpdate();
-
-						if (rowsAffected > 0)
-						{
-							connection.commit();
-							System.out.println(Thread.currentThread().getName() + " compró " + ticketsAComprar + " tickets.");
-							synchronized (Tienda.class)
-							{
-								Tienda.totalTicketsVendidos += ticketsAComprar;
-							}
-						} else
-						{
-							connection.rollback(); // Revertir en caso de fallo
-							System.out.println(Thread.currentThread().getName() + " no pudo completar la compra.");
-						}
-					}
-				} else
-				{
-					System.out.println(Thread.currentThread().getName() + " no pudo comprar. No hay suficientes tickets.");
-				}
-			} catch (SQLException e)
-			{
-				e.printStackTrace();
-			}
-		}
-		else
-		{
-			System.out.println("No hay stock suficiente para este pedido.");
-		}
 	}
-	
 }
+

@@ -6,10 +6,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 public class Tienda
 {
-	protected static final String URL = "jdbc:mysql://127.0.0.1:3306/tienda";
+	protected static final String URL = "jdbc:mysql://localhost:3306/tienda";
 	protected static final String usuario = "java";
 	protected static final String contrasenia = "java12345678";
 	
@@ -21,7 +24,7 @@ public class Tienda
 		{
 			mostrarMenu();
 			opc = input.nextInt();
-			if(opc > 0 && opc < 4)
+			if(opc > 0 && opc < 3)
 			{
 				switch(opc)
 				{
@@ -29,9 +32,6 @@ public class Tienda
 					realizarPedido();
 					break;
 				case 2:
-					registrarRider();
-					break;
-				case 3:
 					checkRiders();
 					break;
 				}
@@ -41,54 +41,14 @@ public class Tienda
 				System.out.println("Opción incorrecta. Intentalo de nuevo.");
 			}
 		} while(opc != 0);
-		
-		try (Connection connection = DriverManager.getConnection(URL, usuario, contrasenia))
-		{
-			connection.setAutoCommit(false);
-
-			if (ticketsDisponibles >= ticketsAComprar)
-			{
-				// Restar el número de tickets solicitados
-				int newAvailableTickets = ticketsDisponibles - ticketsAComprar;
-
-				// Actualizar la base de datos
-				try (PreparedStatement updateStmt = connection
-						.prepareStatement("UPDATE tickets SET tickets_disponibles = ? WHERE id = 1"))
-				{
-					updateStmt.setInt(1, newAvailableTickets);
-					int rowsAffected = updateStmt.executeUpdate();
-
-					if (rowsAffected > 0)
-					{
-						connection.commit(); // Confirmar la transacción
-						System.out
-								.println(Thread.currentThread().getName() + " compró " + ticketsAComprar + " tickets.");
-						synchronized (Tienda.class)
-						{
-							Tienda.totalTicketsVendidos += ticketsAComprar;
-						}
-					} else
-					{
-						connection.rollback(); // Revertir en caso de fallo
-						System.out.println(Thread.currentThread().getName() + " no pudo completar la compra.");
-					}
-				}
-			} else
-			{
-				System.out.println(Thread.currentThread().getName() + " no pudo comprar. No hay suficientes tickets.");
-			}
-		} catch (SQLException e)
-		{
-			e.printStackTrace();
-		}
+		System.out.println("Fin del programa.");
 	}
 	
 	private static void mostrarMenu()
 	{
 		System.out.println("MENÚ");
 		System.out.println("1. Realizar pedido");
-		System.out.println("2. Registrar rider");
-		System.out.println("3. Ver riders disponibles");
+		System.out.println("2. Ver riders disponibles");
 		System.out.println("0. Salir");
 		System.out.println("Opción: ");
 	}
@@ -99,6 +59,7 @@ public class Tienda
 		System.out.println("NUEVO PEDIDO");
 		System.out.println("Código cliente: ");
 		int codcli = input.nextInt();
+		input.nextLine();
 		System.out.println("Dirección: ");
 		String dir = input.nextLine();
 		System.out.println("Código artículo: ");
@@ -107,56 +68,31 @@ public class Tienda
 		int cantidad = input.nextInt();
 		
 		Pedido p = new Pedido(codcli, dir, codart, cantidad);
-		
+		p.ejecutar();
 	}
 	
-	private static void regisrarRider()
+	private static void checkRiders()
 	{
-		
-	}
-	
-	private static void checkRider()
-	{
-		
-	}
-	
-	// Método para insertar un nuevo registro en la tabla tickets
-	// Método para actualizar la cantidad de tickets disponibles
-    public static void actualizarCantidadTickets(int ticketId, int ticketsDisponibles) {
-        // Consulta SQL para actualizar el registro
-        String sql = "UPDATE tickets SET tickets_disponibles = ? WHERE id = ?";
-
-        try (Connection connection = DriverManager.getConnection(URL);
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            
-            // Establecer los valores de los parámetros de la consulta
-            preparedStatement.setInt(1, ticketsDisponibles);
-            preparedStatement.setInt(2, ticketId);
-
-            // Ejecutar la consulta
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-	
-	// Obtener el número de tickets disponibles
-	protected static int getTicketsDisponibles()
-	{
-		int ticketsDisponibles = 0;
-		try (Connection connection = DriverManager.getConnection(URL);
-				PreparedStatement stmt = connection
-						.prepareStatement("SELECT tickets_disponibles FROM tickets WHERE id = 1"))
+		try (Connection connection = DriverManager.getConnection(Tienda.URL, Tienda.usuario, Tienda.contrasenia))
 		{
-			ResultSet rs = stmt.executeQuery();
-			if (rs.next())
+			try (
+					PreparedStatement stmt = connection.prepareStatement
+					(
+						"SELECT * FROM riders WHERE disponible = 1"
+					)
+				)
 			{
-				ticketsDisponibles = rs.getInt("tickets_disponibles");
-			}
-		} catch (SQLException e)
+				ResultSet rs = stmt.executeQuery();
+				System.out.println("LISTADO DE RIDERS DISPONIBLES");
+				while (rs.next())
+				{
+					System.out.printf("Código: %d Nombre: %s\n", rs.getInt("codrider"), rs.getString("nombre"));
+				}
+			}			
+		}
+		catch (SQLException e)
 		{
 			e.printStackTrace();
 		}
-		return ticketsDisponibles;
 	}
 }

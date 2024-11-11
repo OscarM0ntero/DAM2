@@ -53,7 +53,7 @@ DROP TABLE IF EXISTS `envios`;
 CREATE TABLE `envios` (
   `codped` int NOT NULL,
   `codrider` int NOT NULL,
-  `enviado` tinyint DEFAULT '0',
+  `terminado` tinyint DEFAULT '0',
   PRIMARY KEY (`codped`,`codrider`),
   KEY `codrider_fk_idx` (`codrider`),
   CONSTRAINT `codped_fk` FOREIGN KEY (`codped`) REFERENCES `pedidos` (`codped`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -111,7 +111,7 @@ CREATE TABLE `riders` (
   `nombre` varchar(100) DEFAULT NULL,
   `disponible` tinyint DEFAULT '1',
   PRIMARY KEY (`codrider`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,7 +120,7 @@ CREATE TABLE `riders` (
 
 LOCK TABLES `riders` WRITE;
 /*!40000 ALTER TABLE `riders` DISABLE KEYS */;
-INSERT INTO `riders` VALUES (5,'Juan Perez',1),(6,'Antonio Gomez',1),(7,'Paco Garcia',1);
+INSERT INTO `riders` VALUES (1,'Juan Perez',1),(2,'Antonio Gomez',1),(3,'Paco Garcia',1);
 /*!40000 ALTER TABLE `riders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -133,4 +133,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-11 17:00:19
+-- Dump completed on 2024-11-11 20:56:56
