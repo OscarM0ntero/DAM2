@@ -1,0 +1,18 @@
+<div class="container mt-5">
+	<div class="card">
+	  <div class="card-header text-center bg-primary text-white">
+		<h2>Centro Educativo</h2>
+	  </div>
+	  <div class="card-body text-center">
+		<img [src]="centroActual.logoUrl" alt="Logo del Centro" class="img-fluid mb-3" style="max-height: 150px;">
+		<h3>{{ centroActual.nombre }}</h3>
+		<p><strong>Localidad:</strong> {{ centroActual.localidad }}</p>
+		<p><strong>Familias Profesionales:</strong></p>
+		<ul class="list-unstyled">
+		  <li *ngFor="let familia of centroActual.familias">{{ familia }}</li>
+		</ul>
+		<button class="btn btn-outline-primary" (click)="cambiarCentro()">Cambiar Centro</button>
+	  </div>
+	</div>
+  </div>
+  
