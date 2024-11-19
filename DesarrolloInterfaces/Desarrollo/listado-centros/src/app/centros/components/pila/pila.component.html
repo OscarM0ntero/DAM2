@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <h1 class="text-center">Gestión de Centros</h1>
+
+  <div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="centroActual.logo" alt="{{ centroActual.nombre }}" class="img-fluid rounded-start">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ centroActual.nombre }}</h5>
+          <p class="card-text"><strong>Localidad:</strong> {{ centroActual.localidad }}</p>
+          <p class="card-text">
+            <strong>Ciclos Formativos:</strong>
+            <ul>
+              <li *ngFor="let ciclo of centroActual.ciclos">{{ ciclo }}</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-primary" (click)="anterior()" [disabled]="deshabilitarAnterior()">&lt; ANTERIOR</button>
+    <button class="btn btn-danger" (click)="eliminar()">X ELIMINAR</button>
+    <button class="btn btn-success" (click)="insertar()" [disabled]="pila.length === 0">=> INSERTAR</button>
+    <button class="btn btn-primary" (click)="posterior()" [disabled]="deshabilitarPosterior()">> POSTERIOR</button>
+  </div>
+
+  <!-- Pila de Centros Eliminados -->
+  <div class="mt-4">
+    <h3>Centros en la Pila</h3>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let centro of pila">{{ centro.nombre }}</li>
+    </ul>
+  </div>
+</div>
