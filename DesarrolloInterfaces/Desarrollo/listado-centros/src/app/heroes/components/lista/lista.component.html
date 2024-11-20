@@ -1,0 +1,10 @@
+<div class="list-group">
+	<h3>Lista de Héroes</h3>
+	<ul class="list-group">
+	  <li class="list-group-item" *ngFor="let heroe of heroes">
+		{{ heroe }}
+	  </li>
+	</ul>
+	<button class="btn btn-danger mt-2" (click)="eliminarHeroe()">Eliminar Último</button>
+  </div>
+  
