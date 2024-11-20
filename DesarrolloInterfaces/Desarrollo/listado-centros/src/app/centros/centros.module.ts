@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CentroListComponent } from './components/pila/pila.component';
+import { CentroListComponent } from './components/lista/lista.component';
 
 @NgModule({
   declarations: [CentroListComponent],

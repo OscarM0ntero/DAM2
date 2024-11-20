@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-centro-list',
-  templateUrl: './pila.component.html',
-  styleUrls: ['./pila.component.css']
+  templateUrl: './lista.component.html',
+  styleUrls: ['./lista.component.css']
 })
 export class CentroListComponent {
   centros = [
