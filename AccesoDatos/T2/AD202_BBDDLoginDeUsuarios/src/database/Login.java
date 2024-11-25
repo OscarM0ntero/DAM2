@@ -10,6 +10,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Login {
+	/*
+	 * 	protected static final String URL = "jdbc:mysql://localhost:3306/tienda";
+		protected static final String usuario = "java";
+		protected static final String contrasenia = "java12345678";
+	 * */
     private static final String URL = "jdbc:sqlite:usuarios.db";
 
 
