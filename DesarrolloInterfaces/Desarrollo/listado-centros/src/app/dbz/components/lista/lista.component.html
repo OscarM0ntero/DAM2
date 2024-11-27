@@ -1,0 +1,11 @@
+<div class="col"></div>
+<div class="container mt-5">
+  <h4>Listado</h4>
+
+  <div class="card mb-3">
+    <ul>
+      <li *ngFor="let personaje of personajes">{{ personaje.nombre + " - " + personaje.fuerza}}</li>
+    </ul>
+  </div>
+</div>
+
