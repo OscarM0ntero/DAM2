@@ -1,19 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Personaje } from '../../interfaces/personaje.interface';
 
-@Component({
-  selector: 'dbz-lista',
-  templateUrl: './lista.component.html',
-  styleUrl: './lista.component.css'
-})
-export class ListaComponent {
-  personajes = [
+@Component
+(
+  {
+    selector: 'dbz-lista',
+    templateUrl: './lista.component.html',
+    styleUrl: './lista.component.css'
+  }
+)
+export class ListaComponent
+{
+
+  @Input('miLista')
+  public listaPersonajes: Personaje[] =
+  [
     {
-      nombre: 'Goku',
-      fuerza: '10000'
-    },
-    {
-      nombre: 'Yamsha',
-      fuerza: '500'
+      nombre: 'Default',
+      fuerza: 0
     }
-  ];
+  ]
 }

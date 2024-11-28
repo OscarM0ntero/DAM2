@@ -1,11 +1,22 @@
-<div class="col"></div>
-<div class="container mt-5">
-  <h4>Listado</h4>
-
-  <div class="card mb-3">
-    <ul>
-      <li *ngFor="let personaje of personajes">{{ personaje.nombre + " - " + personaje.fuerza}}</li>
-    </ul>
-  </div>
-</div>
-
+<h4>Listado</h4>
+  <ul class="list-group">
+    <li *ngFor="
+      let personaje of listaPersonajes;
+      let i=index;
+      let esPar=even;
+      let esUltimo=last;
+      let esPrimero=first
+      "
+      class="list-group-item"
+      [ngClass]="{
+      'list-group-item-primary': esPrimero,
+      'list-group-item-secondary': esPar,
+      'list-group-item-danger': esUltimo
+      }"
+      >
+      <span>{{ personaje.nombre }} - </span>
+      <strong>Fuerza: </strong>
+      <span>{{ personaje.fuerza }}</span>
+      <span> Índice:{{ i }} - Es par: {{ esPar }} - Es el último: {{ esUltimo }}</span>
+    </li>
+  </ul>
