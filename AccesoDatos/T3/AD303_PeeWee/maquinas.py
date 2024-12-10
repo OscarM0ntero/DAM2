@@ -1,3 +1,4 @@
+# Hecho por Oscar Montero
 from peewee import *
 
 # Configuración de la base de datos
@@ -9,17 +10,17 @@ db = MySQLDatabase(
     port=3306
 )
 
-# Modelos
+# Modelos de las tablas
 class BaseModel(Model):
     class Meta:
         database = db
 
 class Ubicacion(BaseModel):
-    codigo = AutoField()  # Campo autoincremental
+    codigo = AutoField()  # Campo ai
     lugar = CharField(max_length=100)
 
 class Maquina(BaseModel):
-    codigo = AutoField()  # Campo autoincremental
+    codigo = AutoField()  # Campo ai
     modelo = CharField(max_length=100)
     descripcion = TextField(null=True)
     ram = CharField(max_length=50, null=True)
@@ -33,7 +34,6 @@ def crear_tablas():
         db.create_tables([Ubicacion, Maquina])
     print("Tablas creadas correctamente.")
 
-# Alta de maquinas
 def alta_maquina(modelo, descripcion, ram, hd, cpu, cod_ubicacion):
     try:
         ubicacion = Ubicacion.get(Ubicacion.codigo == cod_ubicacion)
@@ -49,7 +49,6 @@ def alta_maquina(modelo, descripcion, ram, hd, cpu, cod_ubicacion):
     except Ubicacion.DoesNotExist:
         print("Ubicación no encontrada.")
 
-# Consulta de máquina por modelo
 def consulta_por_modelo(modelo):
     maquinas = Maquina.select().where(Maquina.modelo.contains(modelo))
     if maquinas:
@@ -58,7 +57,6 @@ def consulta_por_modelo(modelo):
     else:
         print("No se encontraron máquinas con ese modelo.")
 
-# Actualización de máquina
 def actualizar_maquina(codigo, ram=None, hd=None, cod_ubicacion=None):
     try:
         maquina = Maquina.get_by_id(codigo)
@@ -87,8 +85,46 @@ def listar_maquinas_por_ubicacion(cod_ubicacion):
     except Ubicacion.DoesNotExist:
         print("Ubicación no encontrada.")
 
-# Menú principal
 def menu():
+    while True:
+        print("\n--- Menú Principal ---")
+        print("1. Alta de máquinas")
+        print("2. Consulta de máquina por modelo")
+        print("3. Actualización de máquina")
+        print("4. Listado de máquinas por ubicación")
+        print("5. Salir")
+        opcion = input("Selecciona una opción: ")
+
+        if opcion == "1":
+            print("\n--- Alta de máquinas ---")
+            modelo = input("Introduce el modelo: ")
+            descripcion = input("Introduce la descripción (opcional): ")
+            ram = input("Introduce la RAM: ")
+            hd = input("Introduce el HD: ")
+            cpu = input("Introduce el CPU: ")
+            cod_ubicacion = int(input("Introduce el código de la ubicación: "))
+            alta_maquina(modelo, descripcion, ram, hd, cpu, cod_ubicacion)
+        elif opcion == "2":
+            print("\n--- Consulta de máquina por modelo ---")
+            modelo = input("Introduce el modelo para buscar: ")
+            consulta_por_modelo(modelo)
+        elif opcion == "3":
+            print("\n--- Actualización de máquina ---")
+            codigo = int(input("Introduce el código de la máquina: "))
+            ram = input("Introduce la nueva RAM (deja vacío si no cambia): ")
+            hd = input("Introduce el nuevo HD (deja vacío si no cambia): ")
+            cod_ubicacion = input("Introduce el nuevo código de ubicación (deja vacío si no cambia): ")
+            cod_ubicacion = int(cod_ubicacion) if cod_ubicacion else None
+            actualizar_maquina(codigo, ram or None, hd or None, cod_ubicacion)
+        elif opcion == "4":
+            print("\n--- Listado de máquinas por ubicación ---")
+            cod_ubicacion = int(input("Introduce el código de la ubicación: "))
+            listar_maquinas_por_ubicacion(cod_ubicacion)
+        elif opcion == "5":
+            print("Programa finalizado.")
+            break
+        else:
+            print("Opción no válida. Intentalo de nuevo.")
     while True:
         print("\n--- Menú Principal ---")
         print("1. Alta de máquinas")
@@ -112,15 +148,13 @@ def menu():
         else:
             print("Opción no válida. Intentalo de nuevo.")
 
-# Ejecutar el programa
-if __name__ == "__main__":
-    # Crear tablas si no existen
-    crear_tablas()
 
-    # Agregar ubicaciones iniciales para pruebas
+if __name__ == "__main__":
+
+    crear_tablas() # Crear tablas si no existen
+
     if not Ubicacion.select().exists():
         Ubicacion.create(lugar="Almacén Central")
         Ubicacion.create(lugar="Oficina Principal")
 
-    # Ejecutar el menú
     menu()
