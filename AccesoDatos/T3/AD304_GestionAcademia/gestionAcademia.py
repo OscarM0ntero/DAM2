@@ -1,12 +1,12 @@
 import mysql.connector
 from datetime import date
 
-# Conexión a la base de datos
+# Conectar a la base de datos
 def connect():
     return mysql.connector.connect(
-        host="localhost",  # Cambia por tu host remoto
-        user="oscar",  # Cambia por tu usuario
-        password="Examen2024",  # Cambia por tu contraseña
+        host="localhost",
+        user="oscar",
+        password="Examen2024",
         database="School"
     )
 
