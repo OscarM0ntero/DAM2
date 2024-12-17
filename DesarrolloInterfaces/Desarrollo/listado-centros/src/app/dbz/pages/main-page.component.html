@@ -1,13 +1,12 @@
 <h1>DBZ Main Page</h1>
-
 <hr>
-<div class="row">
+<div class="row" style="max-width: 1500px; margin: auto;">
   <div class="col">
-    <dbz-lista [miLista]="personajes"></dbz-lista>
+    <dbz-lista [miLista]="personajes" (personajeEliminado)="onEliminarPersonaje($event)"></dbz-lista>
   </div>
 
-  <div class="col">
-    <dbz-add-personaje></dbz-add-personaje>
+  <div class="col" style="margin-right: 10px;">
+    <dbz-add-personaje (onNewPersonaje)="onNewPersonaje($event)"></dbz-add-personaje>
   </div>
 </div>
 
