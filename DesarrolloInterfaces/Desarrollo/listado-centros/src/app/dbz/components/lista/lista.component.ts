@@ -15,15 +15,16 @@ export class ListaComponent {
 	public listaPersonajes: Personaje[] =
 		[
 			{
+        id: '',
 				nombre: 'Default',
 				fuerza: 0
 			}
 		];
 
 	@Output()
-	public personajeEliminado: EventEmitter<Personaje> = new EventEmitter();
+	public eliminarPersonaje: EventEmitter<string> = new EventEmitter();
 
-	eliminar(personaje: Personaje): void {
-		this.personajeEliminado.emit(personaje);
+	eliminar(id: string): void {
+		this.eliminarPersonaje.emit(id);
 	}
 }

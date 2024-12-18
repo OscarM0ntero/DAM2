@@ -2,11 +2,11 @@
 <hr>
 <div class="row" style="max-width: 1500px; margin: auto;">
   <div class="col">
-    <dbz-lista [miLista]="personajes" (personajeEliminado)="onEliminarPersonaje($event)"></dbz-lista>
+    <dbz-lista [miLista]="dbzService.personajes" (eliminarPersonaje)="dbzService.deletePersonajeById($event)"></dbz-lista>
   </div>
 
   <div class="col" style="margin-right: 10px;">
-    <dbz-add-personaje (onNewPersonaje)="onNewPersonaje($event)"></dbz-add-personaje>
+    <dbz-add-personaje (onNewPersonaje)="dbzService.onNewPersonaje($event)"></dbz-add-personaje>
   </div>
 </div>
 

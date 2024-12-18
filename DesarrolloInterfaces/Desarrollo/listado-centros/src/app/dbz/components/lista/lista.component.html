@@ -16,9 +16,11 @@
 			<span>{{ personaje.nombre }} - </span>
 			<strong>Fuerza: </strong>
 			<span>{{ personaje.fuerza }}</span>
+      <strong> ID: </strong>
+      <span>{{ personaje.id }}</span>
 
 		</div>
-		<button class="btn btn-danger" (click)="eliminar(personaje)">X</button>
-		
+		<button class="btn btn-danger" (click)="eliminar(personaje.id)">X</button>
+
 	</li>
 </ul>

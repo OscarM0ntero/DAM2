@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Personaje } from '../../interfaces/personaje.interface';
 
+
 @Component
 	(
 		{
@@ -11,16 +12,15 @@ import { Personaje } from '../../interfaces/personaje.interface';
 	)
 export class AddPersonajeComponent {
 	@Output()
-	public onNewPersonaje: EventEmitter<Personaje> = new EventEmitter();
+	public onNewPersonaje: EventEmitter<Omit<Personaje, 'id'>> = new EventEmitter();
 
-	public personaje: Personaje =
+	public personaje: Omit<Personaje, 'id'> =
 		{
 			nombre: '',
 			fuerza: 0
 		}
 
 	public addPersonaje(): void {
-		debugger;
 
 		console.log(this.personaje)
 
