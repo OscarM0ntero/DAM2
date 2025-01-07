@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "677d493ac11a20f0bbb13fda"
+  },
+  "Shutter Island": {
+    "puntuacion": 8.2,
+    "año": 2010,
+    "director": "Martin Scorsese"
+  },
+  "Mamma mia!": {
+    "puntuacion": 6.5,
+    "año": 2008,
+    "director": "Phyllida Lloyd"
+  },
+  "Inglorious Basterds": {
+    "puntuacion": 8.4,
+    "año": 2009,
+    "director": "Quentin Tarantino"
+  }
+},
+{
+  "_id": {
+    "$oid": "677d4bc2c11a20f0bbb13fe3"
+  },
+  "American Psycho": {
+    "puntuacion": 7.6,
+    "año": 2000,
+    "director": "Mary Harron"
+  }
+}]
