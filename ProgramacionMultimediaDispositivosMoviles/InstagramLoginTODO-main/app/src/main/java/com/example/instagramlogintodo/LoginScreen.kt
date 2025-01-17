@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -19,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
@@ -83,7 +85,8 @@ fun Email(email: String, onTextChanged: (String) -> Unit) {
         onValueChange = onTextChanged,
         placeholder = { Text("Email") },
         modifier = Modifier.fillMaxWidth(),
-        singleLine = true
+        singleLine = true,
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
     )
 }
 
@@ -98,9 +101,9 @@ fun Password(password: String, onTextChanged: (String) -> Unit) {
         singleLine = true,
         visualTransformation = if (isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
         trailingIcon = {
-            val icon = if (isPasswordVisible) R.drawable.icon else R.drawable.icon
+            val eye_icon = if (isPasswordVisible) R.drawable.eye_icon else R.drawable.closed_eye_icon
             IconButton(onClick = { isPasswordVisible = !isPasswordVisible }) {
-                Icon(painter = painterResource(id = icon), contentDescription = null)
+                Icon(painter = painterResource(id = eye_icon), contentDescription = null)
             }
         }
     )
@@ -124,12 +127,13 @@ fun LoginButton(isLoginEnabled: Boolean) {
             .fillMaxWidth()
             .height(48.dp),
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = if (isLoginEnabled) Color.Blue else Color.LightGray,
+            containerColor = if (isLoginEnabled) Color.Blue else Color.LightGray,
             contentColor = Color.White
         )
     ) {
         Text("Log In")
     }
+
 }
 
 @Composable
