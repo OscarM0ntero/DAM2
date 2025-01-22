@@ -1,95 +1,13 @@
 <div class="row">
-
-  <div class="col-md-3 col-sm-6">
-
+  <div *ngFor="let gif of listadoGifs" class="col-md-3 col-sm-6">
     <div class="card mb-2 text-center bg-dark">
-
       <div class="card-body">
+        <img [src]="gif.images.fixed_height.url" class="img-fluid" alt="{{ gif.title }}">
+        <hr>
         <p class="card-text text-white">
-          Hola Mundo!
+          {{ gif.title }}
         </p>
       </div>
-
-    </div>
-
-    <div class="card mb-2 text-center bg-dark">
-
-      <div class="card-body">
-        <p class="card-text text-white">
-          Hola Mundo!
-        </p>
-      </div>
-
     </div>
   </div>
-
-  <div class="col-md-3 col-sm-6">
-
-    <div class="card mb-2 text-center bg-dark">
-
-      <div class="card-body">
-        <p class="card-text text-white">
-          Hola Mundo!
-        </p>
-      </div>
-
-    </div>
-
-    <div class="card mb-2 text-center bg-dark">
-
-      <div class="card-body">
-        <p class="card-text text-white">
-          Hola Mundo!
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="col-md-3 col-sm-6">
-
-    <div class="card mb-2 text-center bg-dark">
-
-      <div class="card-body">
-        <p class="card-text text-white">
-          Hola Mundo!
-        </p>
-      </div>
-
-    </div>
-
-    <div class="card mb-2 text-center bg-dark">
-
-      <div class="card-body">
-        <p class="card-text text-white">
-          Hola Mundo!
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="col-md-3 col-sm-6">
-
-    <div class="card mb-2 text-center bg-dark">
-
-      <div class="card-body">
-        <p class="card-text text-white">
-          Hola Mundo!
-        </p>
-      </div>
-
-    </div>
-
-    <div class="card mb-2 text-center bg-dark">
-
-      <div class="card-body">
-        <p class="card-text text-white">
-          Hola Mundo!
-        </p>
-      </div>
-
-    </div>
-  </div>
-
 </div>
