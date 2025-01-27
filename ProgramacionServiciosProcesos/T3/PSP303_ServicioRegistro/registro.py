@@ -1,6 +1,6 @@
 import socket
 
-def cliente_saludo():
+def cliente_registro():
     HOST = "79.72.63.217"
     PUERTO = 5000
 
@@ -8,18 +8,15 @@ def cliente_saludo():
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as cliente:
             cliente.connect((HOST, PUERTO))
 
-            # Recibir la pregunta del servidor
-            pregunta = cliente.recv(1024).decode().strip()
-            print("Servidor:", pregunta)
+            # Introducir el nombre
+            nombre = input("¿Quién eres? > ").strip()
 
-            # Enviar el nombre
-            nombre = input("Introduce tu nombre: ")
-
+            # Enviar el mensaje al servidor
             cliente.sendall((nombre + "\n").encode())
 
-            # Recibir el saludo
-            saludo = cliente.recv(1024).decode().strip()
-            print("Servidor:", saludo)
+            # Recibir la respuesta
+            respuesta = cliente.recv(1024).decode().strip()
+            print("Servidor:", respuesta)
 
     except ConnectionRefusedError:
         print("No se pudo conectar al servidor. Asegúrate de que está en ejecución.")
@@ -27,4 +24,4 @@ def cliente_saludo():
         print(f"Error: {e}")
 
 if __name__ == "__main__":
-    cliente_saludo()
+    cliente_registro()
