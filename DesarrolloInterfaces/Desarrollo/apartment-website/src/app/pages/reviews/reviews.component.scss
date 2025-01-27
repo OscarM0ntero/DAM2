@@ -1,0 +1,14 @@
+.reviews-container {
+  margin: 2rem;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: 1rem;
+      strong {
+        display: inline-block;
+        min-width: 50px;
+      }
+    }
+  }
+}

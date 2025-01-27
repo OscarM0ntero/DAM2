@@ -1,0 +1,14 @@
+.faq-container {
+  margin: 2rem;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: 1rem;
+      strong {
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+}
