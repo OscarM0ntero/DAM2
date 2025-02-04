@@ -1,0 +1,52 @@
+ 
+<section class="about-section">
+  <div class="about-content">
+    <div class="text">
+      <h2>Descubre la Experiencia</h2>
+      <p>Sumérgete en el lujo y la comodidad de nuestro apartamento totalmente equipado, con impresionantes vistas al mar y acceso a las mejores atracciones de Torremolinos.</p>
+    </div>
+    <div class="image">
+      <img src="/assets/IMG_02.jpg" alt="Vista del apartamento">
+    </div>
+  </div>
+</section>
+
+<section class="booking-rating">
+  <div class="rating-box">
+    <h3>Valoración en Booking</h3>
+    <p class="score">9.3</p>
+  </div>
+</section>
+
+<!-- Galería de imágenes tipo carrusel -->
+<section class="gallery-section">
+  <h2>Galería de Imágenes</h2>
+  <div class="carousel-container">
+    <button class="carousel-btn left" (click)="prevSlide()">&#10094;</button>
+    <div class="carousel-wrapper" #carousel>
+      <div class="carousel-track" [style.transform]="'translateX(' + translateValue + '%)'" [style.transition]="'transform 0.5s ease-in-out'">
+        <img *ngFor="let img of visibleImages" [src]="img" class="carousel-image" alt="Galería">
+      </div>
+    </div>
+    <button class="carousel-btn right" (click)="nextSlide()">&#10095;</button>
+  </div>
+</section>
+
+<section class="faq-section">
+
+  <h2>Preguntas Frecuentes</h2>
+  <div class="faq">
+    <details>
+      <summary>¿Dónde está ubicado el apartamento?</summary>
+      <p>El apartamento se encuentra en el centro de Torremolinos, a pocos pasos de la playa.</p>
+    </details>
+    <details>
+      <summary>¿Cuáles son los horarios de check-in y check-out?</summary>
+      <p>El check-in es a partir de las 15:00 y el check-out antes de las 11:00.</p>
+    </details>
+    <details>
+      <summary>¿Se permiten mascotas?</summary>
+      <p>Lo sentimos, pero no se permiten mascotas en el apartamento.</p>
+    </details>
+  </div>
+</section>
