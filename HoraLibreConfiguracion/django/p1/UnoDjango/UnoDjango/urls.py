@@ -7,5 +7,6 @@ urlpatterns = [
     # indicamos que la vista la queremos mostrar en esa ruta,
     # añadimos a la lista de url, la nuestra, con hola, como nombre de ruta, y nuestro nombre
     # de vista.
+    path('otramas/', views.home), #nueva vista
     path("admin/", admin.site.urls),
 ]
