@@ -18,19 +18,9 @@
   </div>
 </section>
 
-<!-- Galería de imágenes tipo carrusel -->
-<section class="gallery-section">
-  <h2>Galería de Imágenes</h2>
-  <div class="carousel-container">
-    <button class="carousel-btn left" (click)="prevSlide()">&#10094;</button>
-    <div class="carousel-wrapper" #carousel>
-      <div class="carousel-track" [style.transform]="'translateX(' + translateValue + '%)'" [style.transition]="'transform 0.5s ease-in-out'">
-        <img *ngFor="let img of visibleImages" [src]="img" class="carousel-image" alt="Galería">
-      </div>
-    </div>
-    <button class="carousel-btn right" (click)="nextSlide()">&#10095;</button>
-  </div>
-</section>
+<div class="image-slider-container">
+	<ng-image-slider [images]="imageObject" [autoSlide]="4" [infinite]="true" [imageSize]="{width: '32.3%', height: '320px', space: 7}" [manageImageRatio]="true"></ng-image-slider>
+</div>
 
 <section class="faq-section">
 
@@ -50,3 +40,5 @@
     </details>
   </div>
 </section>
+
+    
