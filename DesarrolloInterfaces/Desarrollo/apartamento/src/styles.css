@@ -39,6 +39,9 @@ body {
   font-weight: 600;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
 }
+.hero-title:hover {
+  cursor: pointer;
+}
 .book-button {
   position: absolute;
   top: 20px;
