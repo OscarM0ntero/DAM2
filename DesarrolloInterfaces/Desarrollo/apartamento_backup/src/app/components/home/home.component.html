@@ -1,0 +1,48 @@
+<section class="about-section">
+	<div class="about-content">
+		<div class="text">
+			<h2>Descubre la Experiencia</h2>
+			<p>Sumérgete en el lujo y la comodidad de nuestro apartamento totalmente equipado, con impresionantes vistas
+				al mar y acceso a las mejores atracciones de Torremolinos.</p>
+		</div>
+		<div class="image">
+			<img src="/assets/IMG_02.jpg" alt="Vista del apartamento">
+		</div>
+	</div>
+</section>
+
+<section class="booking-rating">
+	<div class="rating-box">
+		<h3>Valoración en Booking</h3>
+		<p class="score">9.3</p>
+	</div>
+</section>
+
+<div class="image-slider-container">
+	<ng-image-slider
+	[images]="imageObject" [infinite]="true" [autoSlide]="2.5" [manageImageRatio]="true" [imageSize]="{width: '32.5%', height: '320px', space: 5}"></ng-image-slider>
+</div>
+
+
+<section class="faq-section">
+
+	<h2>Preguntas Frecuentes</h2>
+	<div class="faq">
+		<details>
+			<summary>¿Dónde está ubicado el apartamento?</summary>
+			<p>Calle Loma de los Riscos 117, Torremolinos</p>
+		</details>
+		<details>
+			<summary>¿Cuáles son los horarios de check-in y check-out?</summary>
+			<p>El check-in es a partir de las 15:00 y el check-out antes de las 11:00.</p>
+		</details>
+		<details>
+			<summary>¿Cómo se realiza el check-in?</summary>
+			<p>El check-in se realiza de forma autónoma: se rellena un formulario online y una vez entregado se le darán los códigos de acceso para acceder al apartamento.</p>
+		</details>
+		<details>
+			<summary>¿Se permiten mascotas?</summary>
+			<p>Sí! Aceptamos una mascota bajo petición previa y con un suplemento adicional de 10€/noche.</p>
+		</details>
+	</div>
+</section>

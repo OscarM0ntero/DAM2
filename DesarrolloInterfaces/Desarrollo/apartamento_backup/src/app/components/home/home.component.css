@@ -1,0 +1,50 @@
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-content .text {
+  width: 50%;
+}
+
+.about-content .image img {
+  width: 100%;
+  max-height: 50vh;
+}
+
+.booking-rating {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.rating-box {
+  display: inline-block;
+  background: #68806A;
+  padding: 20px;
+  color: white;
+}
+
+.score {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.faq-section {
+  padding: 50px;
+}
+
+.faq details {
+  margin-bottom: 10px;
+}
+
+.faq summary {
+  font-weight: bold;
+  cursor: pointer;
+}

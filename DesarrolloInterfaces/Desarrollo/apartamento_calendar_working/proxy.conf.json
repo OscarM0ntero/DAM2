@@ -1,0 +1,12 @@
+{
+	"/api": {
+	  "target": "https://ical.booking.com",
+	  "secure": true,
+	  "changeOrigin": true,
+	  "logLevel": "debug",
+	  "pathRewrite": {
+		"^/api": ""
+	  }
+	}
+  }
+  

@@ -1,4 +1,3 @@
-
 .about-section {
   display: flex;
   justify-content: space-between;
@@ -17,6 +16,7 @@
 
 .about-content .image img {
   width: 100%;
+  max-height: 50vh;
 }
 
 .booking-rating {
@@ -36,52 +36,6 @@
   font-weight: bold;
 }
 
-/* Estilos de la galería tipo carrusel */
-.gallery-section {
-  text-align: center;
-  padding: 50px;
-}
-
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-}
-
-.carousel-wrapper {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 600%;
-}
-
-.carousel-image {
-  width: calc(100% / 6);
-  flex: 0 0 auto;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.carousel-btn.left {
-  left: 0px !important;
-  z-index: 10;
-}
-
-.carousel-btn.right {
-  right: 10px;
-}
-
 .faq-section {
   padding: 50px;
 }
@@ -93,59 +47,4 @@
 .faq summary {
   font-weight: bold;
   cursor: pointer;
-}
-
-
-/* Estilos del carrusel */
-.gallery-section {
-  text-align: center;
-  padding: 50px;
-}
-
-.carousel-container {
-  position: relative;
-  justify-content: center;
-  overflow: hidden;
-  width: 120%;
-  max-width: 2000px;
-  margin: auto;
-  padding: auto;
-  left: calc(-10%);
-}
-
-.carousel-wrapper {
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  width: 100%;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 10px;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-image {
-  flex: 0 0 auto;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.carousel-btn.left {
-  left: 10px !important;
-}
-
-.carousel-btn.right {
-  right: 10px;
 }
