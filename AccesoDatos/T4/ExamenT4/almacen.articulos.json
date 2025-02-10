@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "67aa2c2acd7342dba7a48b69"
+  },
+  "nombre": "Laptop Gamer X",
+  "descripcion": "Potente laptop",
+  "precio": 1999.99,
+  "categoria": "Electrónica",
+  "stock": 20,
+  "fecha_creacion": "2024-05-08"
+},
+{
+  "_id": {
+    "$oid": "67aa2c2acd7342dba7a48b6a"
+  },
+  "nombre": "Silla gamer",
+  "descripcion": "Silla de oficina.",
+  "precio": 299.99,
+  "categoria": "Mobiliario",
+  "stock": 50,
+  "fecha_creacion": "2024-05-08"
+},
+{
+  "_id": {
+    "$oid": "67aa2c2acd7342dba7a48b6b"
+  },
+  "nombre": "Libro de Cocina",
+  "descripcion": "Recetas deliciosas de la abuela.",
+  "precio": 24.99,
+  "categoria": "Libros",
+  "stock": 100,
+  "fecha_creacion": "2024-05-08"
+},
+{
+  "_id": {
+    "$oid": "67aa33312ed55817bbc5fe2c"
+  },
+  "nombre": "Raton",
+  "descripcion": "Raton gamer",
+  "precio": 19.99,
+  "categoria": "Electrónica",
+  "stock": 120,
+  "fecha_creacion": "2024-05-08"
+},
+{
+  "_id": {
+    "$oid": "67aa33312ed55817bbc5fe2d"
+  },
+  "nombre": "Mesa",
+  "descripcion": "Mesa buena",
+  "precio": 499.99,
+  "categoria": "Mueble",
+  "stock": 15,
+  "fecha_creacion": "2024-05-28"
+},
+{
+  "_id": {
+    "$oid": "67aa33312ed55817bbc5fe2e"
+  },
+  "nombre": "Lampara",
+  "descripcion": "Potente laptop",
+  "precio": 29.99,
+  "categoria": "Mueble",
+  "stock": 40,
+  "fecha_creacion": "2024-05-18"
+}]
