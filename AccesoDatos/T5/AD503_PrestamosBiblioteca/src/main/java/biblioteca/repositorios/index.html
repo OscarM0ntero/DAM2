@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Biblioteca</title>
+</head>
+<body>
+    <h1>Gestión Biblioteca</h1>
+
+    <h2>Buscar Libros</h2>
+    <input type="text" id="titulo" placeholder="Título del libro">
+    <button onclick="buscarLibros()">Buscar</button>
+    <ul id="resultadoLibros"></ul>
+
+    <h2>Estadísticas de Préstamos</h2>
+    <button onclick="consultarEstadisticas()">Ver estadísticas</button>
+    <ul id="resultadoEstadisticas"></ul>
+
+    <script>
+        async function buscarLibros() {s
+            const titulo = document.getElementById("titulo").value;
+            const response = await fetch(`http://localhost:8080/libros/buscar?titulo=${titulo}`);
+            const libros = await response.json();
+            document.getElementById("resultadoLibros").innerHTML = libros.map(libro => `<li>${libro.titulo}</li>`).join('');
+        }
+
+        async function consultarEstadisticas() {
+            const response = await fetch("http://localhost:8080/prestamos/estadisticas");
+            const estadisticas = await response.json();
+            document.getElementById("resultadoEstadisticas").innerHTML = estadisticas.map(stat => `<li>${stat.codCurso}: ${stat.total} préstamos</li>`).join('');
+        }
+    </script>
+</body>
+</html>
