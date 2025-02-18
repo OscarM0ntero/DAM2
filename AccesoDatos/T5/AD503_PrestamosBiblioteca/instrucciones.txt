@@ -1,0 +1,3 @@
+Paso 1: Compilar y ejecutar el proyecto en Eclipse / Compilar en terminal con "mvn spring-boot:run"
+
+Paso 2: Acceder a http://localhost:8080/index.html

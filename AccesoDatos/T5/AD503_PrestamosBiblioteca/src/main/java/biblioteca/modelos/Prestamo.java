@@ -1,60 +1,72 @@
 package biblioteca.modelos;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
 
 @Entity
+@Table(name = "prestamos")
 public class Prestamo {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@ManyToOne
-	private Libro libro;
+	@Column(name = "id_libro")
+	private Long idLibro;
 
-	@ManyToOne
-	private Lector lector;
+	@Column(name = "id_lector")
+	private Long idLector;
 
-	private LocalDate fechaAlta;
-	private LocalDate fechaBaja;
+	private String fechaalta;
+	private String fechabaja;
 
+	public Prestamo() {
+	}
+
+	public Prestamo(Long idLibro, Long idLector, String fechaalta, String fechabaja) {
+		this.idLibro = idLibro;
+		this.idLector = idLector;
+		this.fechaalta = fechaalta;
+		this.fechabaja = fechabaja;
+	}
+
+	// getters y setters
 	public Long getId() {
 		return id;
-	}
-
-	public Libro getLibro() {
-		return libro;
-	}
-
-	public Lector getLector() {
-		return lector;
-	}
-
-	public LocalDate getFechaAlta() {
-		return fechaAlta;
-	}
-
-	public LocalDate getFechaBaja() {
-		return fechaBaja;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public void setLibro(Libro libro) {
-		this.libro = libro;
+	public Long getIdLibro() {
+		return idLibro;
 	}
 
-	public void setLector(Lector lector) {
-		this.lector = lector;
+	public void setIdLibro(Long idLibro) {
+		this.idLibro = idLibro;
 	}
 
-	public void setFechaAlta(LocalDate fechaAlta) {
-		this.fechaAlta = fechaAlta;
+	public Long getIdLector() {
+		return idLector;
 	}
 
-	public void setFechaBaja(LocalDate fechaBaja) {
-		this.fechaBaja = fechaBaja;
+	public void setIdLector(Long idLector) {
+		this.idLector = idLector;
+	}
+
+	public String getFechaalta() {
+		return fechaalta;
+	}
+
+	public void setFechaalta(String fechaalta) {
+		this.fechaalta = fechaalta;
+	}
+
+	public String getFechabaja() {
+		return fechabaja;
+	}
+
+	public void setFechabaja(String fechabaja) {
+		this.fechabaja = fechabaja;
 	}
 }
