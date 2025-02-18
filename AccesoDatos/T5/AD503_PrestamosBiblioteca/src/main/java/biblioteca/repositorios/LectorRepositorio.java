@@ -12,9 +12,6 @@ import biblioteca.modelos.Lector;
 @Repository
 public interface LectorRepositorio extends JpaRepository<Lector, Long> {
 
-	@Query("SELECT l FROM Lector l WHERE LOWER(l.nombre) LIKE LOWER(CONCAT('%', :nombre, '%'))")
-	List<Lector> buscarPorNombre(@Param("nombre") String nombre);
-
 	List<Lector> findByNombreContainingIgnoreCase(String nombre);
 
 }

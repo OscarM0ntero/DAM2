@@ -14,6 +14,4 @@ public interface LibroRepositorio extends JpaRepository<Libro, Long> {
 
 	@Query(value = "SELECT * FROM libros WHERE titulo LIKE CONCAT('%', :titulo, '%')", nativeQuery = true)
 	List<Libro> buscarPorTitulo(@Param("titulo") String titulo);
-
-
 }

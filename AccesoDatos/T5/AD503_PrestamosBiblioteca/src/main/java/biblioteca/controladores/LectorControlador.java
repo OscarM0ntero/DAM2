@@ -21,7 +21,7 @@ public class LectorControlador {
 		if (lector.getNombre() == null || lector.getNombre().isEmpty() || lector.getNombrelogin() == null
 				|| lector.getNombrelogin().isEmpty() || lector.getContraseña() == null
 				|| lector.getContraseña().isEmpty()) {
-			return ResponseEntity.badRequest().body(null); // validación de datos
+			return ResponseEntity.badRequest().body(null); // validacion de datos
 		}
 
 		try {
