@@ -7,4 +7,4 @@ def index (request): # El request captura las peticiones de los clientes
 #Con esto hemos habilitado una vista, pero hay que además darla de alta, en urls.py
 
 def home (request): # Pinta una página con render, también hay que darlo de alta en urls.py
-	return render(request,'index.html') # la página index.html hay que crearla dentro del archivo de configuración de todo proyecto de django, settings.py
+	return render(request,'unodjango/index.html') # la página index.html hay que crearla dentro del archivo de configuración de todo proyecto de django, settings.py

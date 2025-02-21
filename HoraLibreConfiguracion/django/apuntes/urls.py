@@ -8,5 +8,5 @@ urlpatterns = [
     # añadimos a la lista de url, la nuestra, con hola, como nombre de ruta, y nuestro nombre
     # de vista.
     path('otramas/', views.home), #nueva vista
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
 ]

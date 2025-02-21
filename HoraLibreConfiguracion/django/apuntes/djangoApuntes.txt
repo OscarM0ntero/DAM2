@@ -1,0 +1,6 @@
+django-admin startproject NombreProyecto
+
+python manage.py startapp nombre_apliacación
+
+Python manage.py runserver
+
