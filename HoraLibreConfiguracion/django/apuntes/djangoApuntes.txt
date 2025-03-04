@@ -1,6 +1,13 @@
-django-admin startproject NombreProyecto
+django-admin startproject nombre_proyecto
 
 python manage.py startapp nombre_apliacación
 
-Python manage.py runserver
+python manage.py runserver
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+# Consola interactiva
+Python manage.py shell
 
