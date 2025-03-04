@@ -1,0 +1,22 @@
+from library.models import Author, Publisher, Book, Loan
+author = Author.objects.create(first_name="Gabriel", last_name="García Márquez", birth_date="1927-03-06")
+publisher = Publisher.objects.create(name="Editorial Sudamericana", address="Calle Falsa 123", city="Buenos Aires", state_province="Buenos Aires", country="Argentina", website="http://editorialsudamericana.com")
+book = Book.objects.create(title="Cien años de soledad", publisher=publisher, publication_date="1967-06-05")
+book.authors.add(author)
+
+books_by_author = Book.objects.filter(authors__first_name="Gabriel")
+books_by_author
+
+books_by_publisher = Book.objects.filter(publisher__name="Editorial Sudamericana")
+books_by_publisher
+
+active_loans = Loan.objects.filter(return_date__isnull=True)
+active_loans
+
+loan = Loan.objects.first()
+loan.return_date = "2025-01-10"
+loan.save()
+
+book_to_delete = Book.objects.get(title="Cien años de soledad")
+book_to_delete.delete()
+

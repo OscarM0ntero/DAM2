@@ -1,12 +1,15 @@
 from django.contrib import admin
 from django.urls import path, include
 from . import views  # Importo nuestro módulo views, recién creado.
-from core.views import home
+from core.views import home, autor_list, libro_list, autor_create
 
 urlpatterns = [
     path("", home),  # Si no ponemos nada entre las comillas directamente
     # entra en nuestra página index.html
     path("admin/", admin.site.urls),
+    path("autor/", autor_list),
+    path("libro/", libro_list),
+    path ('new-autor/', autor_create),
 ]
 
 """
