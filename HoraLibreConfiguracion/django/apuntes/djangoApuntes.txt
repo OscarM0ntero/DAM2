@@ -8,6 +8,9 @@ python manage.py makemigrations
 
 python manage.py migrate
 
+python manage.py createsuperuser
+
+
 # Consola interactiva
 Python manage.py shell
 

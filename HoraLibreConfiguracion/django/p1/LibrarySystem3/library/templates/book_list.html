@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% block content %}
+<h1>Lista de Libros</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Editorial</th>
+            <th>Fecha de Publicación</th>
+            <th>Autores</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.publisher.name }}</td>
+            <td>{{ book.publication_date }}</td>
+            <td>{{ book.authors.all|join:", " }}</td>
+            <td>
+                <a href="{% url 'book_detail' book.id %}" class="btn btn-info btn-sm">Ver</a>
+                <a href="{% url 'book_edit' book.id %}" class="btn btn-warning btn-sm">Editar</a>
+                <button onclick="showDeleteModal('{{ book.id }}', '{{ book.title }}')" class="btn btn-danger btn-sm">Eliminar</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'book_create' %}" class="btn btn-primary">Agregar Libro</a>
+<!-- Modal de confirmación de eliminación -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirmar eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar el libro "<span id="bookTitle"></span>"?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a id="deleteButton" href="" class="btn btn-danger">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showDeleteModal(bookId, bookTitle) {
+        document.getElementById('bookTitle').textContent = bookTitle;
+        document.getElementById('deleteButton').href = "{% url 'book_delete' 0 %}".replace('0', bookId);
+        $('#deleteModal').modal('show');
+    }
+</script>
+{% endblock %}

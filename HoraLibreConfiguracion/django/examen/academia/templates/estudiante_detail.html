@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block content %}
+<h1>{{ estudiante.nombre }}</h1>
+<p>Correo electrónico: {{ estudiante.correo }}</p>
+
+<!--
+<h3>Cursos activos de {{ estudiante.nombre }}</h3>
+<ul>
+    {% for curso in cursos %}
+        <li>{{ curso.nombre }}</li>
+    {% endfor %}
+</ul>
+-->
+<a href="{% url 'estudiante_edit' estudiante.id %}" class="btn btn-warning">Editar Estudiante</a>
+<a href="{% url 'estudiante_delete' estudiante.id %}" class="btn btn-danger">Eliminar Estudiante</a>
+
+{% endblock %}

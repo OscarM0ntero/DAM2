@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% block content %}
+<h1>Lista de Inscripciones</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Estudiante</th>
+            <th>Curso</th>
+            <th>Fecha de Inscripción</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for inscripcion in inscripciones %}
+        <tr>
+            <td>{{ inscripcion.estudiante.nombre }}</td>
+            <td>{{ inscripcion.curso.nombre }}</td>
+            <td>{{ inscripcion.fecha_inscripcion }}</td>
+            <td>
+                <a href="{% url 'inscripcion_detail' inscripcion.id %}" class="btn btn-success btn-sm">Ver</a>
+                <a href="{% url 'inscripcion_edit' inscripcion.id %}" class="btn btn-warning btn-sm">Editar</a>
+                <button onclick="showDeleteModal('{{ inscripcion.id }}')" class="btn btn-danger btn-sm">Eliminar</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'inscripcion_create' %}" class="btn btn-primary">Registrar Nueva Inscripción</a>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmar eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar la inscripción?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a id="deleteButton" href="" class="btn btn-danger">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function showDeleteModal(inscripcionId) {
+    document.getElementById('deleteButton').href = `/inscripciones/${inscripcionId}/borrar/`;
+    $('#deleteModal').modal('show');
+}
+</script>
+
+{% endblock %}

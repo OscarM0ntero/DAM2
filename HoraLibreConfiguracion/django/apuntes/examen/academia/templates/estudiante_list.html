@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+{% block content %}
+<h1>Lista de Estudiantees</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for estudiante in estudiantes %}
+        <tr>
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.correo }}</td>
+            <td>
+                <a href="{% url 'estudiante_detail' estudiante.id %}" class="btn btn-success btn-sm">Ver</a>
+                <a href="{% url 'estudiante_edit' estudiante.id %}" class="btn btn-warning btn-sm">Editar</a>
+                <button onclick="showDeleteModal('{{ estudiante.id }}', '{{ estudiante.nombre }}')" class="btn btn-danger btn-sm">Eliminar</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'estudiante_create' %}" class="btn btn-primary">Agregar Estudiante</a>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirmar eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar al estudiante "<span id="estudianteName"></span>"?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a id="deleteButton" href="" class="btn btn-danger">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showDeleteModal(estudianteId, estudianteName) {
+        document.getElementById('estudianteName').textContent = estudianteName;
+        document.getElementById('deleteButton').href = "{% url 'estudiante_delete' 0 %}".replace('0', estudianteId);
+        $('#deleteModal').modal('show');
+    }
+</script>
+{% endblock %}

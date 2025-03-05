@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container">
+    <h1>{% if form.instance.id %}Editar Libro{% else %}Crear Nuevo Libro{% endif %}</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">
+            {% if form.instance.id %}Guardar Cambios{% else %}Crear Libro{% endif %}
+        </button>
+    </form>
+</div>
+{% endblock %}

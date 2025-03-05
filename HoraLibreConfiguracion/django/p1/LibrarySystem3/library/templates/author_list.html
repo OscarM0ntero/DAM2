@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% block content %}
+<h1>Lista de Autores</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for author in authors %}
+        <tr>
+            <td>{{ author.first_name }}</td>
+            <td>{{ author.last_name }}</td>
+            <td>{{ author.birth_date }}</td>
+            <td>
+                <a href="{% url 'author_detail' author.id %}" class="btn btn-info btn-sm">Ver</a>
+                <a href="{% url 'author_edit' author.id %}" class="btn btn-warning btn-sm">Editar</a>
+                <button onclick="showDeleteModal('{{ author.id }}', '{{ author.first_name }} {{ author.last_name }}')" class="btn btn-danger btn-sm">Eliminar</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'author_create' %}" class="btn btn-primary">Agregar Autor</a>
+<!-- Modal de confirmación de eliminación -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirmar eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar al autor "<span id="authorName"></span>"?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a id="deleteButton" href="" class="btn btn-danger">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showDeleteModal(authorId, authorName) {
+        document.getElementById('authorName').textContent = authorName;
+        document.getElementById('deleteButton').href = "{% url 'author_delete' 0 %}".replace('0', authorId);
+        $('#deleteModal').modal('show');
+    }
+</script>
+{% endblock %}

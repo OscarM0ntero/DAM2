@@ -1,0 +1,6 @@
+<h1>Libros por editorial Editorial Sudamericana</h1>
+<ul>
+  {% for book in books %}
+    <li>{{ book.title }} - {{ book.authors.all|join:", " }}</li>
+  {% endfor %}
+</ul>
