@@ -2,6 +2,7 @@
 {%block title%} Registrar nuevo autor {%endblock title%}
 {%block content%}
 <form action="" method="POST">
+	{%csrf_token%}
 	{{autor_form}}
 	<button type="submit">Guardar</button>
 </form>

@@ -5,6 +5,7 @@
 	{% for aut in authors %}
 	<li>{{ aut }}</li>
 	<li>{{ aut.name}}</li> <!-- Lo que contiene la variable autor es una lista -->
+	<li><a href="/update-autor/{{aut.id}}">Editar</a></li>
 	{% endfor %}
 </ul>
 <div><a href="/new-autor/">Registrar nuevo autor</a></div>

@@ -1,0 +1,6 @@
+<h1>Préstamos activos</h1>
+<ul>
+  {% for loan in loans %}
+    <li>{{ loan.book.title }} - {{ loan.borrower }}</li>
+  {% endfor %}
+</ul>

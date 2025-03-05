@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from . import views  # Importo nuestro módulo views, recién creado.
-from core.views import home, autor_list, libro_list, autor_create
+from core.views import home, autor_list, libro_list, autor_create, autor_update
 
 urlpatterns = [
     path("", home),  # Si no ponemos nada entre las comillas directamente
@@ -10,6 +10,7 @@ urlpatterns = [
     path("autor/", autor_list),
     path("libro/", libro_list),
     path ('new-autor/', autor_create),
+	path ('update-autor/<int:pk>',autor_update) #Hay que pasarle el pk por parámetro. Para realizarlo se hace entre símbolos de <> indicando en primer lugar el tipo del campo, en este caso int y luego el nombre del campo pk.
 ]
 
 """
