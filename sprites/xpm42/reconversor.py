@@ -1,11 +1,13 @@
 import sys
+import glob
+import os
 
 def xpm42_to_xpm3(input_file, output_file):
     with open(input_file, "r") as f:
         lines = f.readlines()
     
     if not lines[0].startswith("!XPM42"):
-        print("Error: No es un archivo XPM42 válido.")
+        print(f"Error: {input_file} no es un archivo XPM42 válido.")
         return
     
     # Eliminar la línea de cabecera
@@ -49,9 +51,12 @@ def xpm42_to_xpm3(input_file, output_file):
     
     print(f"Conversión completa: {output_file}")
 
-# Ejemplo de uso
+# Ejemplo de uso con múltiples archivos
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Uso: python xpm42_to_xpm3.py input.xpm42 output.xpm")
+    if len(sys.argv) != 2:
+        print("Uso: python xpm42_to_xpm3.py '*.xpm42'")
     else:
-        xpm42_to_xpm3(sys.argv[1], sys.argv[2])
+        input_pattern = sys.argv[1]
+        for input_file in glob.glob(input_pattern):
+            output_file = os.path.splitext(input_file)[0] + ".xpm"
+            xpm42_to_xpm3(input_file, output_file)
