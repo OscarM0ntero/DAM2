@@ -1,7 +1,0 @@
-Paso 1: Compilar y ejecutar el proyecto en Eclipse / Compilar en terminal con "mvn spring-boot:run"
-
-Paso 2: Instalar dependencias de Python con "pip install fastapi uvicorn sqlalchemy"
-
-Paso 3: Ejecutar en la carpeta del proyecto en otro terminal "uvicorn main:app --reload" para servir el fastAPI
-
-Paso 3: Acceder a http://localhost:8080/index.html
