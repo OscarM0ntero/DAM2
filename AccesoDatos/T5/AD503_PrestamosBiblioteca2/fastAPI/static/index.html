@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestión Biblioteca</title>
+</head>
+<body>
+    <h1>Gestión Biblioteca</h1>
+
+    <!-- ver libros prestados -->
+    <h2>Ver Libros Prestados</h2>
+    <button onclick="obtenerLibrosPrestados()">Ver Libros Prestados</button>
+    
+    <!-- ver estadísticas de préstamos -->
+    <h2>Ver Estadísticas de Préstamos</h2>
+    <button onclick="obtenerEstadisticasPrestamos()">Ver Estadísticas</button>
+    
+    <!-- actualizar datos de un lector -->
+    <h2>Actualizar Datos de Lector</h2>
+    <input type="number" id="lector_id" placeholder="ID del lector">
+    <input type="text" id="nuevo_nombre" placeholder="Nuevo nombre">
+    <input type="text" id="nuevo_curso" placeholder="Nuevo curso">
+    <button onclick="actualizarLector()">Actualizar</button>
+    
+    <h3>Resultado</h3>
+    <pre id="resultado"></pre>
+
+    <script>
+        async function obtenerLibrosPrestados() {
+            try {
+                const response = await fetch('/libros/prestados');
+                if (!response.ok) throw new Error("Error al obtener libros prestados");
+                const data = await response.json();
+                document.getElementById("resultado").innerText = JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById("resultado").innerText = error.message;
+            }
+        }
+
+        async function obtenerEstadisticasPrestamos() {
+            try {
+                const response = await fetch('/estadisticas/libros-prestados');
+                if (!response.ok) throw new Error("Error al obtener estadísticas");
+                const data = await response.json();
+                document.getElementById("resultado").innerText = JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById("resultado").innerText = error.message;
+            }
+        }
+
+        async function actualizarLector() {
+            try {
+                const lectorId = document.getElementById("lector_id").value;
+                const nombre = document.getElementById("nuevo_nombre").value;
+                const codCurso = document.getElementById("nuevo_curso").value;
+                
+                const response = await fetch(`/lectores/${lectorId}`, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ nombre: nombre, cod_curso: codCurso })
+                });
+                
+                if (!response.ok) throw new Error("Error al actualizar lector");
+                const data = await response.json();
+                document.getElementById("resultado").innerText = JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById("resultado").innerText = error.message;
+            }
+        }
+    </script>
+</body>
+</html>
