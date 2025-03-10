@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cliente API Biblioteca</title>
+</head>
+<body>
+    <h1>Cliente API Biblioteca</h1>
+
+    <!-- Buscar película por título -->
+    <div>
+        <h2>Buscar película por título</h2>
+        <input type="text" id="title" placeholder="Título de la película">
+        <button onclick="searchMovie()">Buscar</button>
+        <pre id="searchResult"></pre>
+    </div>
+
+    <!-- Obtener películas populares -->
+    <div>
+        <h2>Obtener películas populares</h2>
+        <button onclick="getPopular()">Ver populares</button>
+        <pre id="popularResult"></pre>
+    </div>
+
+    <!-- Obtener detalles por género -->
+    <div>
+        <h2>Buscar por género</h2>
+        <input type="number" id="genreId" placeholder="ID del género">
+        <button onclick="getByGenre()">Buscar</button>
+        <pre id="genreResult"></pre>
+    </div>
+
+    <script>
+        const BASE_URL = 'http://79.72.63.217:8080';
+
+        // Buscar película por título
+        async function searchMovie() {
+		    const title = document.getElementById('title').value;
+		    if (!title) {
+		        alert('Introduce el título de la película');
+		        return;
+		    }
+		    try {
+		        const response = await fetch(`${BASE_URL}/search?title=${encodeURIComponent(title)}`);
+		        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+		
+		        const text = await response.text();
+		        if (!text) throw new Error('Respuesta vacía del servidor');
+		
+		        const data = JSON.parse(text);
+		        document.getElementById('searchResult').innerText = JSON.stringify(data, null, 2);
+		    } catch (error) {
+		        console.error('Error:', error);
+		        alert(`Error al buscar película: ${error.message}`);
+		    }
+		}
+
+
+        // Obtener películas populares
+		async function getPopular() {
+		    try {
+		        const response = await fetch(`${BASE_URL}/popular`);
+		        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+
+		        const text = await response.text();
+		        if (!text) throw new Error('Respuesta vacía del servidor');
+
+		        const data = JSON.parse(text);
+		        document.getElementById('popularResult').innerText = JSON.stringify(data, null, 2);
+		    } catch (error) {
+		        console.error('Error:', error);
+		        alert(`Error al obtener películas populares: ${error.message}`);
+		    }
+		}
+
+
+        // Buscar por género
+		async function getByGenre() {
+		    const genreId = document.getElementById('genreId').value;
+		    if (!genreId) {
+		        alert('Introduce el ID del género');
+		        return;
+		    }
+		    try {
+		        const response = await fetch(`${BASE_URL}/by-genre?genreId=${genreId}`);
+		        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+
+		        const text = await response.text();
+		        if (!text) throw new Error('Respuesta vacía del servidor');
+
+		        const data = JSON.parse(text);
+		        document.getElementById('genreResult').innerText = JSON.stringify(data, null, 2);
+		    } catch (error) {
+		        console.error('Error:', error);
+		        alert(`Error al buscar por género: ${error.message}`);
+		    }
+		}
+
+    </script>
+</body>
+</html>
