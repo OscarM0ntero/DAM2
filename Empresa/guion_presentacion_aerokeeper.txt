@@ -66,29 +66,37 @@ Un buen sistema para encontrar nuestros primeros clientes podria ser el grupo de
 - Tecnológico: Avances en IA y drones.  
 
 ### 3.4. Análisis DAFO:
-- Fortalezas: Tecnología puntera, producto innovador.  
 - Debilidades: Alta dependencia de proveedores, presupuesto inicial limitado.  
-- Amenazas: Competencia y cambios en regulación.  
-- Oportunidades: Expansión en mercados emergentes.  
+- Amenazas: Competencia y cambios en regulación.
+- Fortalezas: Tecnología puntera, producto innovador y un buen equipo.  
+- Oportunidades: Expansión en mercados emergentes.
+
+### 3.5. Análisis CAME:
+- Corregir: Diversificar proveedores y optimizar recursos financieros.
+- Afrontar: Adaptarse a la regulación y cambios legislativos e invertir en innovación.  
+- Mantener: Tecnología puntera y equipo especializado, así como formación continua del equipo.  
+- Explotar: Ampliación al sector agrícola, entre otros, y fortalecer estrategias digitales de marketing.
+
+### 3.6. Localización de la empresa:
+ La empresa se localizaría en la Costa del Sol, en torno al área de Marbella o alrededores, debido a la alta concentración de campos de golf, lo cual permitiría dar a conocer el producto y prestar servicios de forma más cómoda y cercana a un gran número de clientes.
+
 
 ## 4. Estrategias de Marketing (3-4 min)
-👉 "El marketing es clave para posicionar la marca y captar clientes."
+ "El marketing es clave para posicionar la marca y captar clientes."
 
 ### 4.1. Marketing Estratégico:
 - Posicionamiento basado en calidad-precio alto.  
 - Productos tecnológicos y especializados.  
 
 ### 4.2. Marketing Operativo (Marketing Mix):
-- **Producto:**  
-   - Drones especializados (Aerokeeper3000 a Aerokeeper9000).  
-   - Instalación y formación incluida.  
-   
-- **Precio:**  
-   - Aerokeeper3000 → 9.999 €  
-   - Aerokeeper5000 → 14.999 €  
-   - Aerokeeper7000 → 19.999 €  
-   - Aerokeeper9000 → 29.999 €  
-   - Suscripción de vigilancia → 199 €/mes  
+- **Productos:**  
+   Como ya hemos visto, nuestro principal producto son los drones, de distintas categorías y funcionalidades, pero no es lo único que ofrecemos. También tenemos algunos accesorios complementarios a estos drones como los terminales de control y las antenas de radio. El dron puede funcionar sin estos accesorios, pero son recomendados para aprovechar al máximo todo lo que los drones nos ofrecen.
+También ofrecemos algunos servicios, como el de inspección del terreno por parte de uno de nuestros profesionales para realizar un presupuesto de forma totalmente gratuita; esto se hace con la intención de captar clientes más fácilmente ya que el primer contacto con la empresa es totalmente gratuito y sin compromisos. También servicios de instalación y de suscripción para una de las funcionalidades del dron, la videovigilancia. Otro servicio adicional e incluido con cualquier dron son los cursos y videos online para el manejo y uso de drones.
+
+- **Precios:**  
+Aquí listamos los productos y servicios más relevantes.
+El primero son los drones, yendo desde el Aerokeeper3000 al 9000, pasando por el 5000 y el 7000. El 3000 es el más básico, permitiendo solo análisis y monitoreo del campo, y el 9000 siendo el más completo y complejo, incluyendo visión nocturna y térmica, y un sistema único de detección y ahuyentado de animales, permitiendo mantener animales salvajes fuera de las inmediaciones sin necesidad dañarlos o ponerlos en excesivo estrés capturándolos. Continuamos con los servicios como...
+	- Leer diapositiva.
 
 - **Promoción:**  
    - Off-line: Tarjetas de visita, trípticos.  
