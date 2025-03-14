@@ -1,169 +1,189 @@
-üìù GUION DE PRESENTACI√ìN PARA EL PLAN DE EMPRESA (15-20 MIN)
+?? GUION DE PRESENTACI®ÆN PARA EL PLAN DE EMPRESA (15-20 MIN)
 
-## 1. Introducci√≥n (1-2 min)
-üëâ "Hola, soy √ìscar Montero y voy a presentar el plan de empresa para mi proyecto: AEROKEEPER.
-	- Comentar el √çndice
+## 1. Introducci®Æn (1-2 min)
+?? "Hola, soy ®Æscar Montero y voy a presentar el plan de empresa para mi proyecto: AEROKEEPER.
+Este plan est®¢ dise?ado para ofrecer una soluci®Æn innovadora al mantenimiento de campos de golf y grandes terrenos mediante tecnolog®™a de drones.
 
+		&&&Siguiente diapositiva
 
-Este plan est√° dise√±ado para ofrecer una soluci√≥n innovadora al mantenimiento de campos de golf y grandes terrenos mediante tecnolog√≠a de drones.
+Comenzamos con la tabla de contenidos, el indice. Comenzaremos con la prestentaci®Æn del proyecto, continuando con la idea de negocio, el mercado, estrategias de marketing, recursos humanos, forma juridica, plan de produccion,| inversion y financiacion, analisis contable y, por ultimo, gestion contable, administractiva y fiscal. Comencemos.
 
+		&&&Siguiente diapositiva
 
-**Puntos clave para captar la atenci√≥n:**
-- Aerokeeper es una empresa que proporciona drones especializados para la inspecci√≥n y mantenimiento de campos de golf.
+- Aerokeeper es una empresa tecnol®Ægica que proporciona drones especializados para la inspecci®Æn y mantenimiento de campos de golf y grandes extensiones de terreno.
 
-- El proyecto nace de mi experiencia en el mantenimiento de campos de golf y micromovilida y mi formaci√≥n en tecnolog√≠a.
+- El proyecto nace de mi experiencia en el mantenimiento de campos de golf y micromovilidad, - y mi formaci®Æn en tecnolog®™a.
 
-- La soluci√≥n permite reducir costes y optimizar la gesti√≥n de grandes extensiones de terreno mediante diagn√≥sticos constantes y precisos.
+- Nuestros productos permiten reducir costes y optimizar la gesti®Æn de grandes extensiones de terreno mediante diagn®Æsticos constantes y precisos ejecutados mediante Inteligencia artificial.
 
-- Los objetivos de la empresa a medio y largo plazo son consolidar la marca y expandir el uso de esta tecnolog√≠a en el sector agr√≠cola y recreativo.
+- Los objetivos de la empresa a medio y largo plazo son consolidar la marca y expandir el uso de esta tecnolog®™a en el sector agr®™cola y recreativo.
 
 	- Pasamos a la idea de negocio
+	&&&Siguiente diapositiva
+
 
 ## 2. La Idea de Negocio (2-3 min)
-üëâ "El origen de la idea de negocio surge de mi experiencia personal en el mantenimiento de campos de golf."
+Como ya he mencionado, el origen de la idea de negocio surge de mi experiencia personal en el mantenimiento de campos de golf.
 
-**Problemas detectados:** 
-- Durante mi trabajo como Greenkeeper, detect√© problemas derivados de la inspecci√≥n manual de grandes terrenos, lo que provocaba:  
-   - Altos costes operativos, ya que hay que dedicar mas tiempo y recursos en movilizarse y revisar cada √°rea concreta .  
-   - Da√±os en el campo por el uso constante de veh√≠culos.  
-   - Falta de informaci√≥n precisa sobre el estado del campo. 
-Estos problemas no solo afectan a campos de golf, sino a cualquier gran extension de terreno vegetal y natural, como grandes jardines, campos de f√∫tbol, √°reas agr√≠colas e incluso parques naturales.
+- Durante mi trabajo como Greenkeeper, detect®¶ problemas derivados de la inspecci®Æn manual de grandes terrenos, lo que provocaba:  
+   - Altos costes operativos, ya que hay que dedicar mas tiempo y recursos en movilizarse y revisar cada ®¢rea concreta .  
+   - Da?os en el campo por el uso constante de veh®™culos.  
+   - Falta de informaci®Æn precisa sobre el estado del campo. 
+   
+	&&&Siguiente diapositiva
 
-- **Propuesta de valor:**  
-   - Usar drones de √∫ltima tecnolog√≠a para inspecci√≥n, vigilancia y mantenimiento de campos de golf.  
-   - Reducir costes operativos y optimizar recursos.  
-   - Mejorar la precisi√≥n en la inspecci√≥n y diagn√≥stico.  
+Estos problemas no solo afectan a campos de golf, sino a cualquier gran extension de terreno vegetal y natural, como grandes jardines, campos de f®≤tbol, ®¢reas agr®™colas e incluso parques naturales. Por ello, nuestra propuesta de valor a estos potenciales clientes son drones con las ultimas tecnologias para facilitar tareas de inspeccion, vigilancia y mantenimiento, lo cual implica una reduccion de costes y optimizacion de recursos, asi como una mejora en la precision y eficiencia de estas tareas.
 
-- **Cultura corporativa:**  
-   - Empresa eco-friendly.  
-   - Uso de materiales reciclados y responsabilidad ambiental.  
-   - Transparencia y honestidad con los clientes.
-   Muy importante para poder ser una empresa sostenible y confiable.
+	&&&Siguiente diapositiva
+
+A nivel corporativo, y ante todo, somos una empresa comprometida con el medio ambiente, nuestros clientes y nuestros empleados. Priorizamos la calidad de los materiales de nuestros productos, asi como su origen, preferiblemente reciclado. Tambien nos consideramos una empresa honesta y transparente con los clientes, ajustando nuestros precios y presupuestos a las necesidades reales de estos.
+Todo esto es muy importante para poder ser una empresa sostenible y confiable.
+
+	&&&Siguiente diapositiva
 
 ## 3. El Mercado (2-3 min)
-üëâ "El mercado de drones y tecnolog√≠a aplicada al mantenimiento de campos de golf y grandes terrenos est√° en plena expansi√≥n.
-	Es un nicho de mercado poco explorado y con poca competencia, pero con muchos clientes potenciales"
+El mercado de drones y tecnolog®™a aplicada al mantenimiento de campos de golf, y de grandes terrenos, est®¢ en plena expansi®Æn. Es un nicho de mercado poco explorado y con poca competencia, pero con muchos clientes potenciales.
 
-### 3.1. Clientela:
-- El cliente objetivo son principalmente:  
+- Los clientes objetivos son principalmente:  
    - Campos de golf.  
    - Agricultores.  
    - Administradores de terrenos naturales.  
-Un buen sistema para encontrar nuestros primeros clientes podria ser el grupo de Networking FORE Business Golf Networking, lo cual nos proporciona un buen entorno para dar a conocer nuestros productos y servicios.
+Un buen sistema para encontrar nuestros primeros clientes podria ser el grupo de Networking FORE Business Golf Networking, el cual nos proporciona un buen entorno para dar a conocer nuestros productos y servicios a potenciales clientes en nuestro ®¢rea.
 
+	&&&Siguiente diapositiva
 
 ### 3.2. Competencia:
-- Competidor directo: AcuSpray (productos m√°s caros y limitados a la fumigacion).  
-- Diferenciaci√≥n como empresa o puntos fuertes:  
-   - Mejor experiencia postventa.  
-   - Ofrecemos diagn√≥stico y vigilancia constante mediante inteligencia artificial.  
-   - Personalizaci√≥n del servicio a las necesidades del cliente.  
+Como principal competidor consideramos a AcuSpray, aunque esta empresa est®¢ enfocada en la fumigaci®Æn, y no al an®¢lisis y control del terreno. Como objetivos tendriamos ofrecer una mejor experiencia de postventa, asi como unos servicios centrados en el control y mantenimiento del terreno. Tambien ofrecemos una personalizacion de nuestros servicios adaptados a cada cliente.
 
-### 3.3. An√°lisis PEST:
-- Pol√≠tico: Regulaci√≥n sobre el uso de drones en agricultura.  
-- Econ√≥mico: Capacidad de inversi√≥n de los campos de golf.  
-- Social: Tendencia hacia la sostenibilidad y automatizaci√≥n.  
-- Tecnol√≥gico: Avances en IA y drones.  
+	&&&Siguiente diapositiva
 
-### 3.4. An√°lisis DAFO:
-- Debilidades: Alta dependencia de proveedores, presupuesto inicial limitado.  
-- Amenazas: Competencia y cambios en regulaci√≥n.
-- Fortalezas: Tecnolog√≠a puntera, producto innovador y un buen equipo.  
-- Oportunidades: Expansi√≥n en mercados emergentes.
+### 3.3. An®¢lisis PEST:
+Nuestro analisis PEST es el siguiente:
+- En el aspecto Pol®™tico: Regulaci®Æn sobre el uso de drones, tanto en ®¢reas recreativas como en agricultura.
+- En el Econ®Æmico: Capacidad de inversi®Æn de los campos de golf.
+- En el aspecto Social: Tendencia hacia la sostenibilidad y automatizaci®Æn.  
+- Y en el Tecnol®Ægico: Avances en Intelligencia Artificial y drones.  
 
-### 3.5. An√°lisis CAME:
-- Corregir: Diversificar proveedores y optimizar recursos financieros.
-- Afrontar: Adaptarse a la regulaci√≥n y cambios legislativos e invertir en innovaci√≥n.  
-- Mantener: Tecnolog√≠a puntera y equipo especializado, as√≠ como formaci√≥n continua del equipo.  
-- Explotar: Ampliaci√≥n al sector agr√≠cola, entre otros, y fortalecer estrategias digitales de marketing.
+	&&&Siguiente diapositiva
 
-### 3.6. Localizaci√≥n de la empresa:
- La empresa se localizar√≠a en la Costa del Sol, en torno al √°rea de Marbella o alrededores, debido a la alta concentraci√≥n de campos de golf, lo cual permitir√≠a dar a conocer el producto y prestar servicios de forma m√°s c√≥moda y cercana a un gran n√∫mero de clientes.
+### 3.4. An®¢lisis DAFO:
+Continuamos con los an®¢lisis DAFO y CAME.
+- Como Debilidades tenemos una Alta dependencia de proveedores y un presupuesto inicial limitado.  
+- Nuestras Amenazas son la Competencia y los cambios en la regulaci®Æn de drones.
+- Nuestras Fortalezas residen en una Tecnolog®™a puntera, un producto innovador y un buen equipo bien formado.
+- Y nuestras Oportunidades se centran en la Expansi®Æn en mercados emergentes, como el de aplicaciones tecnologicas en espacios naturales.
 
+### 3.5. An®¢lisis CAME:
+En contraste a estos puntos, tenemos el CAME.
+- Para Corregir nuestras debilidades, podemos Diversificar proveedores y optimizar nuestros recursos financieros.
+- Para Afrontar las amenazas debemos adaptarnos a la regulaci®Æn y cambios legislativos, asi como invertir en innovaci®Æn para estar por encima de nuestros competidores.  
+- Para Mantener nuestras fortalezas, haremos uso de tecnolog®™a puntera y nuestra plantilla de trabajadores estar®¢ formada por un equipo especializado en drones, fomentando tambi®¶n la formaci®Æn continua del equipo.
+- Y por ®≤ltimo, para Explotar las oportunidades, podemos considerar una Ampliaci®Æn al sector agr®™cola m®¢s agresiva, y fortalecer estrategias digitales de marketing.
+
+	&&&Siguiente diapositiva
+
+### 3.6. Localizaci®Æn de la empresa:
+ En lo que a localizacion respecta, La empresa se localizar®™a en la Costa del Sol, en torno al ®¢rea de Marbella o alrededores, debido a la alta concentraci®Æn de campos de golf, lo cual permitir®™a dar a conocer el producto y prestar servicios de forma m®¢s c®Æmoda y cercana a un gran n®≤mero de clientes.
+
+	&&&Siguiente diapositiva
 
 ## 4. Estrategias de Marketing (3-4 min)
- "El marketing es clave para posicionar la marca y captar clientes."
+El marketing es clave para posicionar la marca y captar clientes.
 
-### 4.1. Marketing Estrat√©gico:
-- Posicionamiento basado en calidad-precio alto.  
-- Productos tecnol√≥gicos y especializados.  
+### 4.1. Marketing Estrat®¶gico:
+Nuestro posicionamiento est®¢ basado en una calidad-precio alto, ya que utilizaremos materiales de alta calidad y origenes sostenibles, asi como las utlimas tecnologias, ofreciendo una reduccion de costes, un aumento en eficiencia y productividad y una mejora sustancial del terreno.  
+
+	&&&Siguiente diapositiva
 
 ### 4.2. Marketing Operativo (Marketing Mix):
-- **Productos:**  
-   Como ya hemos visto, nuestro principal producto son los drones, de distintas categor√≠as y funcionalidades, pero no es lo √∫nico que ofrecemos. Tambi√©n tenemos algunos accesorios complementarios a estos drones como los terminales de control y las antenas de radio. El dron puede funcionar sin estos accesorios, pero son recomendados para aprovechar al m√°ximo todo lo que los drones nos ofrecen.
-Tambi√©n ofrecemos algunos servicios, como el de inspecci√≥n del terreno por parte de uno de nuestros profesionales para realizar un presupuesto de forma totalmente gratuita; esto se hace con la intenci√≥n de captar clientes m√°s f√°cilmente ya que el primer contacto con la empresa es totalmente gratuito y sin compromisos. Tambi√©n servicios de instalaci√≥n y de suscripci√≥n para una de las funcionalidades del dron, la videovigilancia. Otro servicio adicional e incluido con cualquier dron son los cursos y videos online para el manejo y uso de drones.
+Como ya hemos visto, nuestro principal producto son los drones, de distintas categor®™as y funcionalidades, pero no es lo ®≤nico que ofrecemos.
 
-- **Precios:**  
-Aqu√≠ listamos los productos y servicios m√°s relevantes.
-El primero son los drones, yendo desde el Aerokeeper3000 al 9000, pasando por el 5000 y el 7000. El 3000 es el m√°s b√°sico, permitiendo solo an√°lisis y monitoreo del campo, y el 9000 siendo el m√°s completo y complejo, incluyendo visi√≥n nocturna y t√©rmica, y un sistema √∫nico de detecci√≥n y ahuyentado de animales, permitiendo mantener animales salvajes fuera de las inmediaciones sin necesidad da√±arlos o ponerlos en excesivo estr√©s captur√°ndolos. Continuamos con los servicios como...
-	- Leer diapositiva.
+Tambi®¶n tenemos algunos accesorios complementarios a estos drones como los terminales de control y las antenas de radio. El dron puede funcionar sin estos accesorios, pero son recomendados para aprovechar al m®¢ximo todo lo que los drones nos ofrecen.
 
-- **Promoci√≥n:**  
-   - Off-line: Tarjetas de visita, tr√≠pticos.  
-   - On-line:  
-     - P√°gina web optimizada.  
-     - Redes sociales (Instagram, LinkedIn, TikTok).  
-     - Publicidad en Google y campa√±as de influencers.  
-     - Canal de YouTube con demostraciones.  
+Tambi®¶n ofrecemos algunos servicios, como el de inspecci®Æn del terreno por parte de uno de nuestros profesionales para realizar un presupuesto de forma totalmente gratuita; esto se hace con la intenci®Æn de captar clientes m®¢s f®¢cilmente, ya que el primer contacto con la empresa es totalmente gratuito y sin compromisos. Tambi®¶n servicios de instalaci®Æn, asi como de suscripci®Æn para una de las funcionalidades del dron, la videovigilancia. Otro servicio adicional e incluido con cualquier dron son los cursos y videos online para el manejo y uso de drones.
 
-- **Atenci√≥n al cliente:**  
-   - Soporte t√©cnico (remoto y f√≠sico).  
-   - Revisi√≥n gratuita anual.  
-   - Garant√≠a extendida.  
+	&&&Siguiente diapositiva
+
+Aqu®™ listamos los productos y servicios m®¢s relevantes.
+El primero son los drones, yendo desde el Aerokeeper3000 al 9000, pasando por el 5000 y el 7000. El 3000 es el m®¢s b®¢sico, permitiendo solo an®¢lisis y monitoreo del campo, y el 9000 siendo el m®¢s completo y complejo, incluyendo visi®Æn nocturna y t®¶rmica, y un sistema ®≤nico de detecci®Æn y ahuyentado de animales, permitiendo mantener animales salvajes fuera de las inmediaciones, sin necesidad da?arlos o ponerlos en excesivo estr®¶s captur®¢ndolos. Tambien encontramos listados los servicios ya mencionados, el presupuestaje que es gratuito y la instalaci®Æn, que si tiene un coste. Vemos la suscripcion, que funciona en forma de nube: esta permite mediante una app visualizar videovigilancia guardada de cada dron durante los ultimos 30 dias. Y por ultimo los accesorios como terminal de control y antena de radio. Desde nuestra app, cada cliente puede controlar un ®≤nico dron, por lo cual el terminal de control solo es necesario si se van a utilizar varios drones en el mismo ®¢rea. Esto es por motivos de coordinacion entre drones y seguriad. Respecto a la cantidad de antenas necesaria, esto dependera del ®¢rea que el cliente necesite cubrir, a mayor ®¢rea, mayor cantidad de antenas requerir®¢.
+
+	&&&Siguiente diapositiva
+
+Para promocionarnos, lo esencial es tener una pagina web optimizada y adecuada a nuestros productos y servicios. Esto permite a los clientes obtener la informacion necesaria si tienen interes en conocernos. Tambien un perfil activo en redes, como instagram y tiktok, que muestre regularmente contenido sobre los productos, sus aplicaciones y su funcionamiento. Esto puede llamar la atencion de potenciales clientes, y tambien dar a conocer el producto a un publico general, que nunca est®¢ mal. A mayor alcance, mayor probabilidad de dar con un potencial cliente.
+Otra forma de promocion mencionada anteriormente seria una red de Networking.
+
+Continuando con el servicio postventa, ofrecemos un increible soporte tecnico remoto y fisico, asi como una garantia extendida, ya que confiamos en un funcionamiento excepcional de nuestro producto.
+Ofreceremos tambien cursos online a los que el cliente siempre tendr®¢ acceso, actualizaciones de software a lo largo del tiempo para mejorar y mantener el producto, y una revision gratuita un a?o despues de la primera instalacion.
+
+	&&&Siguiente diapositiva
 
 ## 5. Recursos Humanos (2-3 min)
-üëâ "El equipo humano es clave para el √©xito del proyecto."
+El equipo humano es clave para el ®¶xito del proyecto.
+	Por eso, se ha dise?ado este organigrama, el cual atiende a todas las necesidades principales para el buen funcionamiento de una empresa de este tipo.
+	Aerokeeper se compone de un Director General y cuatro departamentos principales, los 4 pilares de esta empresa:
+		El Departamento Comercial: Que engloba marketing, redes sociales y atenci®Æn al cliente. Departamento esencial para las relaciones comerciales y promoci®Æn de la empresa.
+		
+		Un Departamento T®¶cnico: en este departamento se encuentra nuestro equipo de Tecnicos Especialistas en drones y antenas, encargados de las instalaciones y todo lo que es el trato t®¶cnico con el cliente.
+		
+		Un Departamento I+D+I: Departamento crucial para mejorar el producto a lo largo del tiempo con los mejores avances tecnol®Ægicos, tanto en hardware como en software.
+		
+		Un Departamento Administrativo: B®¢sico en toda empresa, se encarga de recursos humanos, las finanzas y contabilidad. Tambi®¶n se puede encargar de temas legales y de licencias si fuera necesario.
 
-- **Organigrama:**  
-   - Director General (√ìscar Montero).  
-   - Responsable de Marketing y Redes Sociales.  
-   - T√©cnico Especialista en Drones.  
-   - Ingeniero/a de Desarrollo.  
-   - Responsable de Atenci√≥n al Cliente.  
-   - Responsable de Finanzas y Contabilidad.  
+	Para mantener contentos y obtener un buen rendimiento de los empleados, es crucial un plan de motivaci®Æn. El nuestro se compone principalmente de flexibilidad laboral y reconocimientos e incentivos por desempe?o. Tambi®¶n se ofrece formaci®Æn en horario laboral de cursos relacionados con cada departamento.
+	
+	El convenio laboral de Aerokeeper ser®™a Convenio del Sector de la Tecnolog®™a de la Informaci®Æn y las Comunicaciones, ya que somos una empresa con perspectiva tecnol®Ægica con dise?o de  software y producto.
 
-- **Proceso de selecci√≥n:**  
-   - Definici√≥n de perfiles.  
-   - Entrevistas y pruebas t√©cnicas.  
-   - Contrataci√≥n y formaci√≥n.  
+	&&&Siguiente diapositiva
+	
+## 6. Forma Jur®™dica y Constituci®Æn (2-3 min)
 
-## 6. Forma Jur√≠dica y Constituci√≥n (2-3 min)
-üëâ "He elegido una Sociedad Limitada (S.L.) como forma jur√≠dica."
+Como forma jur®™dica, constituimos una S.L., ya que es lo m®¢s conveniente para nuestro negocio, y contaremos con responsabilidad limitada para proteger el patrimonio personal.
 
-- Capital inicial: 3.500 ‚Ç¨  
-- Responsabilidad limitada para proteger el patrimonio personal.  
-- Proceso de constituci√≥n:  
-   - Certificado de nombre en el Registro Mercantil.  
-   - Redacci√≥n de Estatutos.  
-   - Constituci√≥n ante notario.  
-   - Alta en el IAE y Seguridad Social.  
+El proceso de constituci®Æn se compone de estos pasos:  
+	Certificaci®Æn negativa del nombre. El nombre de nuestra empresa debe estar libre, no registrado.
+	Redactar y aprobar estatutos.
+	Certificado del ingreso del capital social.
+	Escritura p®≤blica en una notar®™a.
+	Solicitar el CIF.
+	E inscribirnos en el Registro Mercantil.
 
-## 7. Plan de Producci√≥n (2 min)
-üëâ "El proceso de producci√≥n est√° muy definido y controlado."
+	&&&Siguiente diapositiva
 
-- Recursos materiales:  
-   - Drones, antenas, terminales de control.  
-   - Equipos inform√°ticos y software especializado.  
+## 7. Plan de Producci®Æn (2 min)
+El proceso de producci®Æn est®¢ muy definido y controlado.
+Como recursos materiales contamos con tres tipos, productos en venta; que incluyen drones, antenas y terminales de control,  herramientas de campo como herramientas de reparacion y mantenimiento de drones, asi como vehiculos de la empresa, y por ultimo herramientas de oficina como equipos informaticos y material de oficina general.
 
-- Costes:  
-   - Fijos: 12.500 ‚Ç¨ (alquiler, sueldos, suministros).  
-   - Variables: Coste de producci√≥n de drones y materiales.  
+	&&&Siguiente diapositiva
+	
+Aqui podemos observar una agrupaci®Æn de los costes fijos y variables. En los fijos pues tenemos alquiler del local, salarios, servicios basicos y otros costes fijos de cada mes, mientras que en los variables vemos los costes de produccion de los drones y los accesorios y los costes concretos de los servicios, que depender®¢n de la cantidad de ventas de cada mes.
 
-## 8. Inversi√≥n y Financiaci√≥n (2-3 min)
-üëâ "Necesitamos una inversi√≥n inicial de 33.600 ‚Ç¨."
+	&&&Siguiente diapositiva
 
-- Financiaci√≥n propia:  
-   - 15.000 ‚Ç¨ de capital inicial.  
+## 8. Inversi®Æn y Financiaci®Æn (2-3 min)
+Necesitamos una inversi®Æn inicial de 33.600 Ä.
+Para ello reunimos 15.000 euros como capital inicial del administrador de la sociedad, y 18.600 como financiaci®Æn ajena mediante un pr®¶stamo, a ser posible de la Linea ICO de Empresa, aunque quiz®¢s podr®™a redondearse a 20.000, para posibles imprevistos y para que queden un poco m®¢s redondos los n®≤meros, por qu®¶ no?
 
-- Financiaci√≥n ajena:  
-   - Pr√©stamo bancario ‚Üí 18.600 ‚Ç¨  
-   - Opci√≥n de L√≠nea ICO Empresas.  
+	&&&Siguiente diapositiva
 
-## 9. An√°lisis Contable y Financiero (1-2 min)
-üëâ "La viabilidad financiera est√° garantizada con una previsi√≥n conservadora de ingresos y gastos."
+## 9. An®¢lisis Contable y Financiero (1-2 min)
+Llevar la contabilidad es obligatorio para tomar decisiones correctas, adem®¢s de para cumplir con la ley, claro est®¢.
+Hay que tener en cuenta que no tributaremos hasta que nuestra base imponible sea positiva, y cuando esto suceda, tributaremos un 15% en este periodo impositivo y en el siguiente. 
 
-- Balance de Situaci√≥n: Activo y pasivo equilibrado.  
-- Cuenta de Resultados: Beneficio proyectado positivo desde el primer a√±o.  
+Debemos realizar las cuentas anuales, las cuales incluyen el balance de situaci®Æn, la cuenta de resultados, la memoria, y para empresas m®¢s grandes el estado de cambios en el patrimonio neto y el estado de flujos de efectivo, pero nosotros nos los podemos ahorrar por ser una empresa peque?a.
 
-## 10. Conclusi√≥n (1 min)
-üëâ "Aerokeeper es una soluci√≥n innovadora que responde a las necesidades de optimizaci√≥n y mantenimiento de campos de golf mediante tecnolog√≠a avanzada. Con un equipo especializado y una propuesta de valor clara, la empresa est√° preparada para competir en un mercado en crecimiento."
+	&&&Siguiente diapositiva
+
+## 10. Gesti®Æn contable, administrativa y fiscal (1 min)
+Entre los documentos se incluyen orden de trabajo, presupuesto, factura, recibo y albar®¢n para registrar y justificar las operaciones comerciales.
+
+El pagar®¶ es como un "te pago m®¢s tarde". Solo lo aceptaremos de empresas fiables y, si necesitamos el dinero antes, podemos adelantarlo en el banco pagando intereses.
+
+Pagaremos un 23% de Impuesto de Sociedades (15% los dos primeros a?os si somos nuevos). Cada tres meses, declararemos el IVA y las retenciones del IRPF de salarios y alquileres.
+
+	&&&Siguiente diapositiva
+
+## 11. Conclusi®Æn (1 min)
+?? "Aerokeeper es una soluci®Æn innovadora que responde a las necesidades de optimizaci®Æn y mantenimiento de campos de golf mediante tecnolog®™a avanzada. Con un equipo especializado y una propuesta de valor clara, la empresa est®¢ preparada para competir en un mercado en crecimiento."
+2o Desarrollo de Aplicaciones Multiplataforma
+IES Playamar
+Curso 2024/25
