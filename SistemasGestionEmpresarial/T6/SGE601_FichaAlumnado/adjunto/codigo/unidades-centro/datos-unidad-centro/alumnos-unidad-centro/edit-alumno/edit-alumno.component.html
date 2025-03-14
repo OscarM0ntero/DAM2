@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Editar Alumno</h2>
+
+<form [formGroup]="alumnoForm">
+  <mat-form-field>
+    <input matInput placeholder="Nombre" formControlName="nombre" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Apellidos" formControlName="apellidos" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Fecha de nacimiento" type="date" formControlName="fecha_nacimiento" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="LinkedIn" formControlName="linkedin">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nivel de inglés</mat-label>
+    <mat-select formControlName="nivel_ingles">
+      <mat-option value="A1">A1</mat-option>
+      <mat-option value="A2">A2</mat-option>
+      <mat-option value="B1">B1</mat-option>
+      <mat-option value="B2">B2</mat-option>
+      <mat-option value="C1">C1</mat-option>
+      <mat-option value="C2">C2</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Minusvalía" type="number" formControlName="minusvalia">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Otra formación" formControlName="otra_formacion">
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+	<button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button (click)="confirmEdit()" [disabled]="!alumnoForm.valid">Guardar</button>
+  </div>
+</form>

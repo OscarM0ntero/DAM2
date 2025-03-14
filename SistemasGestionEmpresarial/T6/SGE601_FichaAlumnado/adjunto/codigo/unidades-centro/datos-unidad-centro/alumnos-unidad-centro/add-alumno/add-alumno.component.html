@@ -1,0 +1,51 @@
+<h3 mat-dialog-title>Añadir Alumno</h3>
+
+<form [formGroup]="alumnoForm" class="mat-dialog-content">
+
+  <mat-form-field>
+    <input matInput placeholder="ID (DNI/NIE/Pasaporte)" formControlName="id">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Nombre" formControlName="nombre">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Apellidos" formControlName="apellidos">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="date" placeholder="Fecha Nacimiento" formControlName="fecha_nacimiento">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Linkedin" formControlName="linkedin">
+    <mat-error *ngIf="alumnoForm.controls.linkedin.invalid">
+      URL no válida
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nivel Inglés</mat-label>
+    <mat-select formControlName="nivel_ingles">
+      <mat-option value="A1">A1</mat-option>
+      <mat-option value="A2">A2</mat-option>
+      <mat-option value="B1">B1</mat-option>
+      <mat-option value="B2">B2</mat-option>
+      <mat-option value="C1">C1</mat-option>
+      <mat-option value="C2">C2</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" placeholder="Minusvalía (%)" formControlName="minusvalia">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Otra Formación" formControlName="otra_formacion">
+  </mat-form-field>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button (click)="confirmAdd()" [disabled]="!alumnoForm.valid">Guardar</button>
+</div>
