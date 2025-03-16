@@ -3,21 +3,28 @@
 	<h3>Buscador</h3>
 
 	<mat-form-field>
-		<mat-label>Buscador de héroes</mat-label>
-		<input type="text" matInput [formControl]="searchInput" (input)="searchHero()" [matAutocomplete]="auto" />
+		<mat-label>Buscar</mat-label>
+		<input type="text" matInput [formControl]="searchInput" (input)="searchPelicula()"  /> <!--[matAutocomplete]="auto"-->
 
+		<!--
 		<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onSelectedOption( $event )">
-			<mat-option *ngFor="let hero of heroes" [value]="hero">
-				{{ hero.superhero }}
+			<mat-option *ngFor="let pelicula of peliculas" [value]="pelicula">
+				{{ pelicula.title }}
 			</mat-option>
 		</mat-autocomplete>
 
-		<mat-option *ngIf="heroes.length === 0 && searchInput.value" value="">
-			No se encontró ningún héroe con el término {{ searchInput.value }}
+		<mat-option *ngIf="peliculas.length === 0 && searchInput.value" value="">
+			No se encontró ninguna película con el término {{ searchInput.value }}
 		</mat-option>
-
+		-->
 	</mat-form-field>
 
-	{{ selectedHero | json }}
+	<div class="grid mb-8">
+		<div *ngFor="let pelicula of peliculas" class="col-12 md:col-4 lg:col-3 xl:col-2">
+			<peliculas-pelicula-card [pelicula]="pelicula"></peliculas-pelicula-card>
+		</div>
+	</div>
+
+	{{ selectedPelicula | json }}
 
 </div>

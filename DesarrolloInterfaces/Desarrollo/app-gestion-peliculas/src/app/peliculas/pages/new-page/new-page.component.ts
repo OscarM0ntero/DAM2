@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Hero, Publisher } from '../../interfaces/hero.interface';
-import { HeroesService } from '../../services/heroes.service';
+import { Pelicula } from '../../interfaces/pelicula.interface';
+import { PeliculasService } from '../../services/peliculas.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -15,10 +15,9 @@ import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-
 })
 export class NewPageComponent {
 
-	public heroForm = new FormGroup({
+	public peliculaForm = new FormGroup({
 		id: new FormControl<string>(''),
-		superhero: new FormControl<string>('', { nonNullable: true }),
-		publisher: new FormControl<Publisher>(Publisher.DCComics),
+		superpelicula: new FormControl<string>('', { nonNullable: true }),
 		alter_ego: new FormControl(''),
 		first_appearance: new FormControl(''),
 		characters: new FormControl(''),
@@ -31,7 +30,7 @@ export class NewPageComponent {
 	];
 
 	constructor(
-		private heroesService: HeroesService,
+		private peliculasService: PeliculasService,
 		private router: Router,
 		private snackbar: MatSnackBar,
 		private dialog: MatDialog
@@ -41,41 +40,41 @@ export class NewPageComponent {
 		if (!this.router.url.includes('edit')) return;
 
 		const route = this.router.url.split('/'); // Tomo la ruta y la divido en secciones
-		const id = route[route.length - 1]; // Tomo la ultima seccion, la id del superheroe
+		const id = route[route.length - 1]; // Tomo la ultima seccion, la id del superpeliculae
 
-		this.heroesService.getHeroById(id)
-			.subscribe(hero => {
-				if (!hero) {	// Si pasa esto significa que el heroe no ha cargado correctamente
+		this.peliculasService.getPeliculaById(id)
+			.subscribe(pelicula => {
+				if (!pelicula) {	// Si pasa esto significa que el peliculae no ha cargado correctamente
 					this.router.navigate(['/']);	// Volvemos al inicio
 					return;
 				}
 
-				this.heroForm.reset(hero);
+				this.peliculaForm.reset(pelicula);
 			});
 	}
 
-	get currentHero(): Hero {
-		const hero = this.heroForm.value as Hero;
-		return hero;
+	get currentPelicula(): Pelicula {
+		const pelicula = this.peliculaForm.value as Pelicula;
+		return pelicula;
 	}
 
 	onSubmit(): void {
-		if (this.heroForm.invalid) return;
+		if (this.peliculaForm.invalid) return;
 
 		// Si tenemos un id, queremos actualizar
-		if (this.currentHero.id) {
-			this.heroesService.updateHero(this.currentHero)
-				.subscribe(hero => {
+		if (this.currentPelicula.id) {
+			this.peliculasService.updatePelicula(this.currentPelicula)
+				.subscribe(pelicula => {
 					// TODO: Mostrar snackbar
-					this.showSnackbar(`${hero.superhero} updated!`)
+					this.showSnackbar(`${pelicula.title} updated!`)
 				});
 			return;
 		}
 
-		this.heroesService.addHero(this.currentHero)
-			.subscribe(hero => {
-				// TODO: Mostrar snackbar y navegar a /heroes/edit/hero.id
-				this.showSnackbar(`${hero.superhero} created!`)
+		this.peliculasService.addPelicula(this.currentPelicula)
+			.subscribe(pelicula => {
+				// TODO: Mostrar snackbar y navegar a /peliculas/edit/pelicula.id
+				this.showSnackbar(`${pelicula.title} created!`)
 			});
 	}
 
@@ -85,22 +84,22 @@ export class NewPageComponent {
 		})
 	}
 
-	public onDeleteHero() {
-		if (!this.currentHero.id) throw Error('Hero id is required');
+	public onDeletePelicula() {
+		if (!this.currentPelicula.id) throw Error('Pelicula id is required');
 
 		const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-			data: this.heroForm.value,
+			data: this.peliculaForm.value,
 		});
 
 		dialogRef.afterClosed().subscribe(result => {
 			if (!result) return;
 
-			this.heroesService.deleteHeroById(this.currentHero.id!)
+			this.peliculasService.deletePeliculaById(this.currentPelicula.id!)
 				.subscribe({
 					next: (success) => {
 						if (success) {
-							this.showSnackbar(`${this.currentHero.superhero} eliminado correctamente`);
-							this.router.navigate(['/heroes']); // Redirigir al listado de héroes
+							this.showSnackbar(`${this.currentPelicula.title} eliminado correctamente`);
+							this.router.navigate(['/peliculas']); // Redirigir al listado de héroes
 						} else {
 							this.showSnackbar('Error al eliminar el héroe');
 						}

@@ -1,0 +1,44 @@
+<ng-template #divLoading>
+	<mat-grid-list cols="1">
+		<mat-grid-tile>
+			<mat-spinner>
+			</mat-spinner>
+		</mat-grid-tile>
+	</mat-grid-list>
+</ng-template>
+
+<div *ngIf="pelicula; else divLoading" class="grid p-2">
+	<mat-card class="col-12 sm:col-6">
+
+		<mat-card-header>
+			<mat-card-title>{{ pelicula.title }}</mat-card-title>
+			<mat-card-subtitle>{{ pelicula.original_title }}</mat-card-subtitle>
+		</mat-card-header>
+
+		<!--<img [src]="pelicula | peliculaImage" alt="pelicula.superpelicula" mat-card-image>-->
+
+	</mat-card>
+	<!--
+	<mat-card class="col-12 sm:col-6">
+		<mat-card-header>
+			<mat-card-title>Información</mat-card-title>
+			<mat-card-subtitle>{{ pelicula.superpelicula }}</mat-card-subtitle>
+		</mat-card-header>
+
+		<mat-card-content>
+			<mat-list>
+				<mat-list-item>{{ pelicula.first_appearance }}</mat-list-item>
+				<mat-list-item>{{ pelicula.characters }}</mat-list-item>
+				<mat-list-item>{{ pelicula.publisher }}</mat-list-item>
+				<mat-list-item>{{ pelicula.alter_ego }}</mat-list-item>
+			</mat-list>
+-->
+	<!-- TODO: Crear un botón para volver al listado 
+			<mat-card-actions>
+				<button mat-raised-button color="warn" (click)="goBack()">Volver al listado</button>
+			</mat-card-actions>
+
+		</mat-card-content>
+	</mat-card>
+	-->
+</div>

@@ -1,17 +1,17 @@
 <h1>
-	{{ currentHero.id ? 'Editar' : 'Añadir' }}
+	{{ currentPelicula.id ? 'Editar' : 'Añadir' }}
 	héroe
-	<small *ngIf="currentHero.id">{{ currentHero.superhero }}</small>
+	<small *ngIf="currentPelicula.id">{{ currentPelicula.title }}</small>
 </h1>
 
 <div class="grid">
 	<div class="col-12 sm:col-6">
 		<mat-card>
 			<mat-card-content>
-				<form class="grid" [formGroup]="heroForm" (ngSubmit)="onSubmit()">
+				<form class="grid" [formGroup]="peliculaForm" (ngSubmit)="onSubmit()">
 					<mat-form-field class="col-12 sm:col-6">
 						<mat-label>Super héroe</mat-label>
-						<input type="text" matInput required formControlName="superhero" />
+						<input type="text" matInput required formControlName="superpelicula" />
 					</mat-form-field>
 
 					<mat-form-field class="col-12 sm:col-6">
@@ -46,10 +46,10 @@
 				</form>
 
 				<div class="flex justify-content-between">
-					<button mat-flat-button color="warn" *ngIf="currentHero.id" (click)="onDeleteHero()">Borrar</button>
+					<button mat-flat-button color="warn" *ngIf="currentPelicula.id" (click)="onDeletePelicula()">Borrar</button>
 					<span></span>
 					<button mat-flat-button color="primary" (click)="onSubmit()"
-						[disabled]="!heroForm.valid">Guardar</button>
+						[disabled]="!peliculaForm.valid">Guardar</button>
 				</div>
 
 			</mat-card-content>
@@ -57,11 +57,11 @@
 	</div>
 	<div class="col-12 sm:col-6">
 		<mat-card>
-			<img [src]="currentHero | heroImage" alt="Imagen del héroe" mat-card-image>
+			<!--<img [src]="currentPelicula | peliculaImage" alt="Imagen del héroe" mat-card-image>-->
 		</mat-card>
 	</div>
 </div>
 
 <pre>
-  {{ currentHero | json }}
+  {{ currentPelicula | json }}
 </pre>
