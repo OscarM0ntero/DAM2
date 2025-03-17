@@ -4,6 +4,7 @@ export interface Pelicula {
 	original_title: string;
 	overview: string;		//Descripcion
 	release_date: Date;
+	original_language: string;
 	vote_average: number;
 	vote_count: number;
 	poster_path: string;

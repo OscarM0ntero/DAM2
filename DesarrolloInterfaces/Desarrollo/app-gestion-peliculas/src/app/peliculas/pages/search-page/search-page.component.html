@@ -1,12 +1,14 @@
-<div class="flex flex-column p-2">
+<div class="flex flex-column p-2 search-container">
 
-	<h3>Buscador</h3>
+	<h1 class="mat-headline-2">Buscador</h1>
 
-	<mat-form-field>
-		<mat-label>Buscar</mat-label>
-		<input type="text" matInput [formControl]="searchInput" (input)="searchPelicula()"  /> <!--[matAutocomplete]="auto"-->
+	<div class="search-bar">
+		<mat-form-field class="search-form" color="warn">
+			<mat-label>Buscar</mat-label>
+			<input type="text" matInput [formControl]="searchInput" (input)="searchPelicula()" />
+			<!--[matAutocomplete]="auto"-->
 
-		<!--
+			<!--
 		<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onSelectedOption( $event )">
 			<mat-option *ngFor="let pelicula of peliculas" [value]="pelicula">
 				{{ pelicula.title }}
@@ -17,8 +19,8 @@
 			No se encontró ninguna película con el término {{ searchInput.value }}
 		</mat-option>
 		-->
-	</mat-form-field>
-
+		</mat-form-field>
+	</div>
 	<div class="grid mb-8">
 		<div *ngFor="let pelicula of peliculas" class="col-12 md:col-4 lg:col-3 xl:col-2">
 			<peliculas-pelicula-card [pelicula]="pelicula"></peliculas-pelicula-card>

@@ -4,8 +4,8 @@ import { Pelicula } from '../../interfaces/pelicula.interface';
 @Component({
   selector: 'peliculas-pelicula-card',
   templateUrl: './card.component.html',
-  styles: [
-  ]
+  styleUrls: ['./card.component.css']
+
 })
 export class CardComponent implements OnInit {
 	@Input()
@@ -17,8 +17,8 @@ export class CardComponent implements OnInit {
 		if (!this.pelicula) throw new Error('Pelicula property is required.');
 	}
 
-	get formattedVoteAverage(): string {
-		return this.pelicula.vote_average.toFixed(1);
+	formatAverage(number: number): string {
+		return number.toFixed(1);
 	}
 	
 }

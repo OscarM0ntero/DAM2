@@ -4,15 +4,17 @@ import { Router } from '@angular/router';
 @Component({
 	selector: 'app-layout-page',
 	templateUrl: './layout-page.component.html',
-	styles: [
-	]
+	styleUrls: ['./layout-page.component.css']
+
 })
 export class LayoutPageComponent {
-	
+	currentYear = new Date().getFullYear();
+
 	public sidebarItems = [
+		{ label: 'Buscar', icon: 'search', url: './search/' },
 		{ label: 'Listado', icon: 'label', url: './list' },
 		{ label: 'Añadir', icon: 'add', url: './new-hero' },
-		{ label: 'Buscar', icon: 'search', url: './search' }
+		
 	];
 
 	constructor(
