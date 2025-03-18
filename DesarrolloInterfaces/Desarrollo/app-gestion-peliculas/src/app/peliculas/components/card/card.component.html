@@ -1,4 +1,4 @@
-<mat-card class="card" [routerLink]="['/peliculas', pelicula.id]">
+<mat-card class="card" [routerLink]="['/peliculas', pelicula.id]" (click)="saveRoute()">
 	<img mat-card-image [src]="pelicula.poster_path" [alt]="pelicula.title">
 	<mat-card-content class="mt-2 card-content">
 		<mat-card-title>{{ pelicula.title }}</mat-card-title>

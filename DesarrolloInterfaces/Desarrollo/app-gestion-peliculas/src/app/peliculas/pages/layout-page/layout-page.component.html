@@ -10,7 +10,6 @@
 		</mat-toolbar>
 
 		<mat-nav-list>
-			<!-- ngFor para mostrar la lista de botones -->
 			<mat-list-item *ngFor="let item of sidebarItems" [routerLink]="item.url" (click)="sidenav.toggle()"
 				class="custom-list-item">
 
@@ -34,9 +33,9 @@
 		</div>
 
 		<div class="toolbar-section right">
-			<span>Usuario</span>
+			<span>{{ user }}</span>
 			<span class="spacer-smoll"></span>
-			<button mat-raised-button color="warn" style="margin-left: 8px">
+			<button mat-raised-button color="warn" style="margin-left: 8px" (click)="onLogout()">
 				Logout
 			</button>
 		</div>
@@ -50,7 +49,7 @@
 	<mat-toolbar class="footer" color="accent">
 		<div class="footer-section left">
 			<a href="https://iesplayamar.es/">IES Playamar</a>
-			
+
 			<mat-divider [vertical]="true"></mat-divider>
 			<span>DAM 2</span>
 			<mat-divider [vertical]="true"></mat-divider>
@@ -58,7 +57,7 @@
 		</div>
 
 		<div class="footer-section center">
-			<a href="https://github.com/OscarM0ntero">Oscar Montero</a>
+			<a href="https://github.com/OscarM0ntero">Oscar Montero DB</a>
 		</div>
 
 		<div class="footer-section right">

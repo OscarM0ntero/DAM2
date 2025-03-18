@@ -1,0 +1,21 @@
+.search-container {
+	background-color: #1e1e1e;
+	min-height: calc(100vh - 128px);
+	color: white;
+	font-family: "Fira Code", monospace;
+}
+
+h1.mat-headline-2 {
+	font-family: "Fira Code", monospace;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.search-bar {
+	text-align: center;
+}
+
+.search-form {
+	width: 70%;
+}

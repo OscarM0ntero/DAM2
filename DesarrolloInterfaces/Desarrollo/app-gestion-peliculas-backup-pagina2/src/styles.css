@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+	height: 100%;
+	background-image: url('assets/fade.png');
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #1e1e1e;
+}
+
+body {
+	margin: 0;
+	font-family: "Fira Code", "Helvetica Neue", sans-serif;
+}
+
+/* utiliza todo el espacio que tenga disponible */
+.spacer {
+	flex: 1 1 auto;
+}
+
+.spacer-smoll {
+	flex: 0.01 1 auto;
+}
+
+.mat-divider {
+	border-top-color: #FFD740 !important;
+	/* F44336 */
+	border-right-color: #F44336 !important;
+	/* FFD740 */
+}

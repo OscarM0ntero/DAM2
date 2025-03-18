@@ -13,7 +13,6 @@ export class PeliculaPageComponent implements OnInit {
 
 	public pelicula?: Pelicula;
 	hover: boolean = false;
-	public backgroundImg?: string;
 
 	constructor(
 		private peliculasService: PeliculasService,
@@ -22,30 +21,33 @@ export class PeliculaPageComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
+		this.pelicula = undefined;
+
 		this.activatedRoute.params
 			.pipe(
+				// Math.floor(Math.random() * (1000 - 0 + 1))
 				delay(Math.floor(Math.random() * (1000 - 0 + 1))),
-				switchMap(({ id }) => this.peliculasService.getPeliculaById(id)),
+				switchMap(({ id }) => {
+					const p = this.peliculasService.getPeliculaById(id);
+					delay(1000);
+					return p;
+				})
 			)
 			.subscribe(pelicula => {
-
 				if (!pelicula) return this.router.navigate(['/peliculas']);
-
 				this.pelicula = pelicula;
-				this.peliculasService.getFondoById(this.pelicula.id).subscribe(fondo => {
-					this.backgroundImg = fondo;
-				});
-				
+
 				return;
 			});
 	}
 
 	goBack(): void {
-		this.router.navigate(['/peliculas/list']);
+		const prevRoute = localStorage.getItem('prevRoute') || '/peliculas';
+		this.router.navigate([prevRoute]);
 	}
 
+
 	getFlag(lang: string): string {
-		console.log(lang);
 		const languageToCountryMap: { [key: string]: string } = {
 			'en': 'GB', // Inglés - Reino Unido
 			'es': 'ES', // Español - España
@@ -107,8 +109,8 @@ export class PeliculaPageComponent implements OnInit {
 			'kn': 'IN', // Canarés - India
 			'ta': 'IN', // Tamil - India
 			'hk': 'HK', // Hong Kong - Región Administrativa Especial de China
-			'yue': 'HK',   // Cantonés - Código ISO 639-3 para cantonés
-			'cn': 'CN'
+			'yue': 'HK',   // Cantonés
+			'cn': 'CN'	   // Chino
 
 		};
 

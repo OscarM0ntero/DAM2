@@ -8,11 +8,12 @@ body {
 	padding: 0;
 	overflow: hidden;
 	background-color: #1e1e1e;
+	font-family: "Fira Code", monospace;
 }
 
 body {
 	margin: 0;
-	font-family: "Fira Code", "Helvetica Neue", sans-serif;
+	font-family: "Fira Code", monospace;
 }
 
 /* utiliza todo el espacio que tenga disponible */

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pelicula } from '../../interfaces/pelicula.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'peliculas-pelicula-card',
@@ -12,6 +13,8 @@ export class CardComponent implements OnInit {
 	public pelicula!: Pelicula;
 	public noPoster: string = 'assets/no-poster.png';
 
+	constructor(private router: Router) {}
+
 	ngOnInit(): void {
 		// pelicula debe ser inicializado
 		if (!this.pelicula) throw new Error('Pelicula property is required.');
@@ -20,6 +23,13 @@ export class CardComponent implements OnInit {
 	formatAverage(number: number): string {
 		return number.toFixed(1);
 	}
+
+	saveRoute() {
+		const currentRoute = this.router.url;
+		localStorage.setItem('prevRoute', currentRoute);
+		console.log(`Ruta guardada: ${currentRoute}`);
+	}
+	
 	
 }
 

@@ -1,0 +1,39 @@
+<ng-template #divLoading>
+	<div class="spinner-container">
+		<mat-spinner color="accent"></mat-spinner>
+	</div>
+</ng-template>
+
+<div *ngIf="pelicula; else divLoading" class="pelicula-background"
+	[ngStyle]="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.95)), url(' + backgroundImg + ')'}">
+	<div class="pelicula-container">
+		<div class="pelicula-card mat-elevation-z8">
+			<!-- Imagen de la película -->
+			<img [src]="pelicula.poster_path" alt="{{ pelicula.title }}" class="pelicula-img" />
+
+			<!-- Contenido de la película -->
+			<div class="pelicula-content">
+				<h1 class="mat-headline-1">{{ pelicula.title }}</h1>
+				<p class="mat-body-1">{{ pelicula.release_date | date }}</p>
+				<p class="mat-body-1 overview">{{ pelicula.overview }}</p>
+
+				<div class="pelicula-details">
+					<p class="mat-body-1"><strong>Popularidad:</strong> {{ formatAverage(pelicula.popularity) }}</p>
+					<p class="mat-body-1"><strong>Nota media:</strong> {{ formatAverage(pelicula.vote_average) }}</p>
+					<p class="mat-body-1"><strong>Idioma: </strong> <span alt="pelicula.original_language">{{
+							getFlag(pelicula.original_language) }}</span></p>
+					<p class="mat-body-1"><strong>Cantidad de votos:</strong> {{ pelicula.vote_count }}</p>
+					
+				</div>
+				<mat-divider></mat-divider>
+
+				<!-- Botón de acción -->
+				<div class="pelicula-actions">
+					<button mat-flat-button color="accent" (mouseover)="hover = true" (mouseleave)="hover = false">
+						Añadir a favoritos
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Pelicula } from '../../interfaces/pelicula.interface';
 import { PeliculasService } from '../../services/peliculas.service';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { Router, ActivatedRoute } from '@angular/router';
+import { delay } from 'rxjs';
 
 
 @Component({
@@ -16,6 +17,8 @@ export class SearchPageComponent implements OnInit {
 	public searchInput = new FormControl('');
 	public peliculas: Pelicula[] = [];
 	public selectedPelicula?: Pelicula;
+
+	@ViewChild('searchInputRef') searchInputRef!: ElementRef<HTMLInputElement>;
 
 
 	constructor(
@@ -32,10 +35,14 @@ export class SearchPageComponent implements OnInit {
 				this.searchPelicula();
 			}
 		});
+		setTimeout(() => {
+			this.searchInputRef.nativeElement.focus();
+		}, 0);
 	}
 
 
 	public searchPelicula() {
+
 		const value: string = this.searchInput.value || '';
 
 		this.router.navigate(['/peliculas/search', value]);
