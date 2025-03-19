@@ -2,7 +2,7 @@ export interface Pelicula {
 	id: number;
 	title: string;
 	original_title: string;
-	overview: string;		//Descripcion
+	overview: string;
 	release_date: Date;
 	original_language: string;
 	vote_average: number;

@@ -19,13 +19,6 @@ export class AuthService {
 
 	get currentUser(): User | undefined {
 		if (!this.user) return undefined;
-
-		// Problema: Javascript pasa los objetos por referencia, y podría ser modificado
-		// NO USAR
-		// return this.user;
-
-		// Opción 1: No permite deep clone, aunque para el caso serviría
-		// return { ...this.user };
 		return structuredClone(this.user);
 	}
 
@@ -37,7 +30,7 @@ export class AuthService {
 
 	doLogout() {
 		this.user = undefined;
-		localStorage.clear(); // Eliminamos cualquier cosa que haya
+		localStorage.clear();
 	}
 
 	public async isAuthenticated(url: string): Promise<boolean> {
