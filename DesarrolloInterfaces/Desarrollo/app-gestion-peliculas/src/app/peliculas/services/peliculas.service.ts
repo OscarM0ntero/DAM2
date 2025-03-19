@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, forkJoin, map, Observable, of } from 'rxjs';
+import { catchError, forkJoin, map, Observable, of, switchMap } from 'rxjs';
 import { Pelicula, Search } from '../interfaces/pelicula.interface';
 import { environments } from 'src/environments/environments';
+import { ApiResponse } from 'src/app/shared/interfaces/api-response';
+import { CommonService } from 'src/app/shared/common.service';
 
 @Injectable({ providedIn: 'root' })
 export class PeliculasService {
@@ -13,33 +15,41 @@ export class PeliculasService {
 	private imageUrl: string = environments.imageUrl;
 	private backgroundUrl: string = environments.backgroundUrl;
 
+	private baseUrl: string = environments.baseUrl;
 
-	constructor(private http: HttpClient) { }
+
+	constructor(private http: HttpClient, private commonService: CommonService) { }
 
 	getPeliculas(): Observable<Pelicula[]> {
 		return this.http.get<Pelicula[]>(`${this.apiUrl}/peliculas`);
 	}
 
 	getPeliculaById(id: string): Observable<Pelicula | undefined> {
-		return this.http.get<Pelicula>(`${this.apiUrl}/movie/${id}?api_key=${this.apiKey}`)
-			.pipe(
-				map(pelicula => {
-					this.getFondoById(pelicula.id).subscribe(fondo => {
-						pelicula.background = fondo || 'assets/black.png'; 
-					});
-					if (pelicula) {
-						pelicula.poster_path = pelicula.poster_path
-							? `${this.imageUrl}${pelicula.poster_path}`
-							: 'assets/no-poster.png';
+		if (id == "search") {
+			return of(undefined);
+		}
+		else {
+			return this.http.get<Pelicula>(`${this.apiUrl}/movie/${id}?api_key=${this.apiKey}`)
+				.pipe(
+					map(pelicula => {
+						this.getFondoById(pelicula.id).subscribe(fondo => {
+							pelicula.background = fondo || 'assets/black.png';
+						});
+						if (pelicula) {
+							pelicula.poster_path = pelicula.poster_path
+								? `${this.imageUrl}${pelicula.poster_path}`
+								: 'assets/no-poster.png';
 
-						pelicula.backdrop_path = pelicula.backdrop_path
-							? `${this.imageUrl}${pelicula.backdrop_path}`
-							: 'assets/black.png';
-					}
-					return pelicula;
-				}),
-				catchError(() => of(undefined))
-			);
+							pelicula.backdrop_path = pelicula.backdrop_path
+								? `${this.imageUrl}${pelicula.backdrop_path}`
+								: 'assets/black.png';
+						}
+						return pelicula;
+					}),
+					catchError(() => of(undefined))
+				);
+		}
+
 	}
 
 	getSearch(query: string): Observable<Pelicula[]> {
@@ -72,7 +82,7 @@ export class PeliculasService {
 		);
 	}
 
-	getFondoById(id: string): Observable<string | undefined> {
+	getFondoById(id: number): Observable<string | undefined> {
 		const url = `${this.apiUrl}/movie/${id}/images?api_key=${this.apiKey}`;
 
 		return this.http.get<any>(url).pipe(
@@ -95,24 +105,101 @@ export class PeliculasService {
 		);
 	}
 
-	addPelicula(pelicula: Pelicula): Observable<Pelicula> {
-		return this.http.post<Pelicula>(`${this.apiUrl}/peliculas`, pelicula)
-	}
-
-	updatePelicula(pelicula: Pelicula): Observable<Pelicula> {
-		if (!pelicula.id) throw Error('Pelicula id is required');
-
-		return this.http.patch<Pelicula>(`${this.apiUrl}/peliculas/${pelicula.id}`, pelicula);
-	}
-
-	deletePeliculaById(id: string): Observable<boolean> {
-		return this.http.delete(`${this.apiUrl}/peliculas/${id}`)
+	getFav(idUsuario: number): Observable<number[]> {
+		return this.http.get<ApiResponse>(`${this.baseUrl}/peliculas_favoritas.php?id_usuario=${idUsuario}`, { headers: this.commonService.getHeaders() })
 			.pipe(
-				map(response => true),
-				catchError(error => of(false))
-			)
+				map((response: ApiResponse) => {
+					if (response.ok && response.data) {
+						return response.data.map((fav: any) => fav.id_pelicula);
+					}
+					return [];
+				})
+			);
 	}
 
+	addFav(idUsuario: number, idPelicula: number): Observable<ApiResponse> {
+		const body = { id_usuario: idUsuario, id_pelicula: idPelicula };
+		return this.http.post<ApiResponse>(`${this.baseUrl}/peliculas_favoritas.php`, body, { headers: this.commonService.getHeaders() })
+			.pipe(
+				map(response => {
+					if (response.ok) {
+						return response;
+					} else {
+						throw new Error(response.message || 'Error al añadir película');
+					}
+				})
+			);
+	}
+
+
+	delFav(idUsuario: number, idPelicula: number): Observable<ApiResponse> {
+		const body = { id_usuario: idUsuario, id_pelicula: idPelicula };
+		return this.http.request<ApiResponse>('delete', `${this.baseUrl}/peliculas_favoritas.php`, { body, headers: this.commonService.getHeaders() })
+			.pipe(
+				map(response => {
+					if (response.ok) {
+						return response;
+					} else {
+						throw new Error(response.message || 'Error al eliminar película');
+					}
+				})
+			);
+	}
+
+	checkFav(idUsuario: number, idPelicula: number): Observable<boolean> {
+		return this.getFav(idUsuario).pipe(
+			map((favoritas: number[]) =>
+				favoritas.includes(idPelicula)
+			)
+		);
+	}
+
+	getPeliculasFav(idUsuario: number): Observable<Pelicula[]> {
+		return this.getFav(idUsuario).pipe(
+			switchMap((ids: number[]) => {
+				if (!ids.length) return of([]);
+
+				const requests = ids.map(id =>
+					this.getPeliculaById(id.toString()).pipe(
+						catchError(() => of(undefined)) 
+					)
+				);
+
+				return forkJoin(requests).pipe(
+					map((peliculas) =>
+						peliculas.filter((pelicula): pelicula is Pelicula => !!pelicula)
+					)
+				);
+			})
+		);
+	}
+
+
+	/*
+
+	getFav(idUsuario: number): Observable<any[]> {
+		return this.http.get<ApiResponse>(`${this.baseUrl}/peliculas_favoritas.php?id_usuario=${idUsuario}`)
+			.pipe(
+				map((response: ApiResponse) => response.data || [])
+			);
+	}
+
+	addFav(idUsuario: number, idPelicula: number): Observable<ApiResponse> {
+		const body = { id_usuario: idUsuario, id_pelicula: idPelicula };
+		return this.http.post<ApiResponse>(`${this.baseUrl}/peliculas_favoritas.php`, body);
+	}
+
+	delFav(idUsuario: number, idPelicula: number): Observable<ApiResponse> {
+		const body = { id_usuario: idUsuario, id_pelicula: idPelicula };
+		return this.http.request<ApiResponse>('delete', `${this.baseUrl}/peliculas_favoritas.php`, { body });
+	}
+
+	checkFav(idUsuario: number, idPelicula: number): Observable<boolean> {
+		return this.getFav(idUsuario).pipe(
+			map(favoritas => favoritas.some(fav => fav.id_pelicula === idPelicula))
+		);
+	}
+	*/
 
 }
 

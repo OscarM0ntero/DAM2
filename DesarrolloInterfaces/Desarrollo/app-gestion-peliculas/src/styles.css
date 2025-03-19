@@ -16,7 +16,6 @@ body {
 	font-family: "Fira Code", monospace;
 }
 
-/* utiliza todo el espacio que tenga disponible */
 .spacer {
 	flex: 1 1 auto;
 }
@@ -30,4 +29,20 @@ body {
 	/* F44336 */
 	border-right-color: #F44336 !important;
 	/* FFD740 */
+}
+
+.custom-mat-field .mdc-line-ripple::before,
+.custom-mat-field .mdc-line-ripple::after {
+	border-bottom-color: #FFD740 !important;
+}
+
+.custom-mat-field .mat-mdc-floating-label,
+.custom-mat-field .mat-mdc-input-element {
+	color: #1e1e1e !important;
+}
+
+.custom-dialog-container .mat-dialog-container {
+	background-color: #1e1e1e !important;
+	color: white !important;
+	border-radius: 12px;
 }

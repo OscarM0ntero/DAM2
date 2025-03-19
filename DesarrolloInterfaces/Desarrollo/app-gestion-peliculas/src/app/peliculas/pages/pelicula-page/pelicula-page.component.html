@@ -31,19 +31,23 @@
 						<p class="mat-body-1"><strong>Idioma: </strong> <span alt="pelicula.original_language">{{
 								getFlag(pelicula.original_language) }}</span></p>
 						<p class="mat-body-1"><strong>Cantidad de votos: </strong>{{ pelicula.vote_count }}</p>
-
 					</div>
+
 					<mat-divider></mat-divider>
 
-					<!-- Botón de acción -->
 					<div class="pelicula-actions">
 						<div class="fav-btn">
-							<button mat-fab color="warn" matTooltip="Añadir a favoritos" matTooltipPosition="above">
-								<mat-icon class="big-icon">add</mat-icon>
+							<button mat-fab 
+							        color="{{ isFav ? 'accent' : 'warn' }}" 
+							        matTooltip="{{ isFav ? 'Eliminar de favoritos' : 'Añadir a favoritos' }}" 
+							        matTooltipPosition="above" 
+							        (click)="toggleFav()" 
+							        [disabled]="!pelicula">
+								<mat-icon class="big-icon">{{ isFav ? 'check' : 'favorite' }}</mat-icon>
 							</button>
 						</div>
-
 					</div>
+
 				</div>
 			</div>
 		</div>

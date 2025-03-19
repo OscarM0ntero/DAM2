@@ -10,31 +10,33 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 
 })
 export class LayoutPageComponent {
-	
+
 	currentYear = new Date().getFullYear();
 
 	public sidebarItems = [
-		{ label: 'Buscar', icon: 'search', url: './search/' },
-		{ label: 'Favoritos', icon: 'label', url: './fav-list' },
-		{ label: 'Añadir', icon: 'add', url: './new-hero' },
-		
+		{ label: 'Buscar', icon: 'search', url: '/peliculas/search/' },
+		{ label: 'Favoritos', icon: 'label', url: '/peliculas/fav-list' },
+		...(localStorage.getItem('permisos') === '1'
+			? [{ label: 'Usuarios', icon: 'manage_accounts', url: '/usuarios' }]
+			: [])
 	];
+
 
 	constructor(
 		private router: Router,
 		private authService: AuthService
 	) { }
 
-	
+
 	onLogout(): void {
 		this.authService.doLogout();
 		this.router.navigate(['/auth']);
 	}
-	
+
 	get user(): string | null {
 		return localStorage.getItem('nombre_publico');
 	}
-	
+
 
 
 }

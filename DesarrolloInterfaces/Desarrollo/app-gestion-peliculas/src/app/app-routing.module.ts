@@ -17,6 +17,11 @@ const routes: Routes = [
 		canActivate: [AuthGuard]
 	},
 	{
+		path: 'usuarios',
+		loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule),
+		canActivate: [AuthGuard]
+	},
+	{
 		path: '404',
 		component: Error404PageComponent
 	},

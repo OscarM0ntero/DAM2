@@ -11,23 +11,31 @@ import { CardComponent } from './components/card/card.component';
 //import { HeroImagePipe } from './pipes/hero-image.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NoPosterPipe } from './pipes/no-poster.pipe';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { CardListComponent } from './components/card-list/card-list.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
-  declarations: [
-    PeliculaPageComponent,
-    LayoutPageComponent,
-    FavListPageComponent,
-    SearchPageComponent,
-    CardComponent,
-    NoPosterPipe,
-  ],
-  imports: [
-    CommonModule,
-    PeliculasRoutingModule,
-	MaterialModule,
-	ReactiveFormsModule,
-	
-  ]
+	declarations: [
+		PeliculaPageComponent,
+		LayoutPageComponent,
+		FavListPageComponent,
+		SearchPageComponent,
+		CardComponent,
+		CardListComponent,
+		NoPosterPipe,
+		ConfirmDialogComponent
+	],
+	imports: [
+		CommonModule,
+		PeliculasRoutingModule,
+		MaterialModule,
+		ReactiveFormsModule,
+		MatTooltipModule,
+		MatDialogModule
+
+	]
 })
 export class PeliculasModule { }
