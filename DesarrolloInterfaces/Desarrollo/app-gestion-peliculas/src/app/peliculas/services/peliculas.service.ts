@@ -105,8 +105,8 @@ export class PeliculasService {
 		);
 	}
 
-	getFav(idUsuario: number): Observable<number[]> {
-		return this.http.get<ApiResponse>(`${this.baseUrl}/peliculas_favoritas.php?id_usuario=${idUsuario}`, { headers: this.commonService.getHeaders() })
+	getFav(): Observable<number[]> {
+		return this.http.get<ApiResponse>(`${this.baseUrl}/peliculas_favoritas.php`, { headers: this.commonService.getHeaders() })
 			.pipe(
 				map((response: ApiResponse) => {
 					if (response.ok && response.data) {
@@ -117,8 +117,8 @@ export class PeliculasService {
 			);
 	}
 
-	addFav(idUsuario: number, idPelicula: number): Observable<ApiResponse> {
-		const body = { id_usuario: idUsuario, id_pelicula: idPelicula };
+	addFav(idPelicula: number): Observable<ApiResponse> {
+		const body = { id_pelicula: idPelicula };
 		return this.http.post<ApiResponse>(`${this.baseUrl}/peliculas_favoritas.php`, body, { headers: this.commonService.getHeaders() })
 			.pipe(
 				map(response => {
@@ -132,8 +132,8 @@ export class PeliculasService {
 	}
 
 
-	delFav(idUsuario: number, idPelicula: number): Observable<ApiResponse> {
-		const body = { id_usuario: idUsuario, id_pelicula: idPelicula };
+	delFav(idPelicula: number): Observable<ApiResponse> {
+		const body = { id_pelicula: idPelicula };
 		return this.http.request<ApiResponse>('delete', `${this.baseUrl}/peliculas_favoritas.php`, { body, headers: this.commonService.getHeaders() })
 			.pipe(
 				map(response => {
@@ -146,22 +146,22 @@ export class PeliculasService {
 			);
 	}
 
-	checkFav(idUsuario: number, idPelicula: number): Observable<boolean> {
-		return this.getFav(idUsuario).pipe(
+	checkFav(idPelicula: number): Observable<boolean> {
+		return this.getFav().pipe(
 			map((favoritas: number[]) =>
 				favoritas.includes(idPelicula)
 			)
 		);
 	}
 
-	getPeliculasFav(idUsuario: number): Observable<Pelicula[]> {
-		return this.getFav(idUsuario).pipe(
+	getPeliculasFav(): Observable<Pelicula[]> {
+		return this.getFav().pipe(
 			switchMap((ids: number[]) => {
 				if (!ids.length) return of([]);
 
 				const requests = ids.map(id =>
 					this.getPeliculaById(id.toString()).pipe(
-						catchError(() => of(undefined)) 
+						catchError(() => of(undefined))
 					)
 				);
 
@@ -173,33 +173,6 @@ export class PeliculasService {
 			})
 		);
 	}
-
-
-	/*
-
-	getFav(idUsuario: number): Observable<any[]> {
-		return this.http.get<ApiResponse>(`${this.baseUrl}/peliculas_favoritas.php?id_usuario=${idUsuario}`)
-			.pipe(
-				map((response: ApiResponse) => response.data || [])
-			);
-	}
-
-	addFav(idUsuario: number, idPelicula: number): Observable<ApiResponse> {
-		const body = { id_usuario: idUsuario, id_pelicula: idPelicula };
-		return this.http.post<ApiResponse>(`${this.baseUrl}/peliculas_favoritas.php`, body);
-	}
-
-	delFav(idUsuario: number, idPelicula: number): Observable<ApiResponse> {
-		const body = { id_usuario: idUsuario, id_pelicula: idPelicula };
-		return this.http.request<ApiResponse>('delete', `${this.baseUrl}/peliculas_favoritas.php`, { body });
-	}
-
-	checkFav(idUsuario: number, idPelicula: number): Observable<boolean> {
-		return this.getFav(idUsuario).pipe(
-			map(favoritas => favoritas.some(fav => fav.id_pelicula === idPelicula))
-		);
-	}
-	*/
 
 }
 

@@ -14,7 +14,6 @@ export class PeliculaPageComponent implements OnInit {
 
 	public pelicula?: Pelicula;
 	public isFav: boolean = false;
-	idUsuario: number = Number(localStorage.getItem('id_usuario'));
 
 	constructor(
 		private peliculasService: PeliculasService,
@@ -37,7 +36,7 @@ export class PeliculaPageComponent implements OnInit {
 				if (!pelicula) return this.router.navigate(['/peliculas']);
 				this.pelicula = pelicula;
 
-				if (this.idUsuario && this.pelicula?.id) {
+				if (this.pelicula?.id) {
 					this.checkIfFav();
 				}
 				return;
@@ -45,8 +44,8 @@ export class PeliculaPageComponent implements OnInit {
 	}
 
 	checkIfFav(): void {
-		if (this.idUsuario && this.pelicula) {
-			this.peliculasService.checkFav(this.idUsuario, this.pelicula.id)
+		if (this.pelicula) {
+			this.peliculasService.checkFav(this.pelicula.id)
 				.subscribe(isFav => {
 					this.isFav = isFav;
 				});
@@ -54,10 +53,10 @@ export class PeliculaPageComponent implements OnInit {
 	}
 
 	toggleFav(): void {
-		if (!this.pelicula || !this.idUsuario) return;
+		if (!this.pelicula) return;
 
 		if (this.isFav) {
-			this.peliculasService.delFav(this.idUsuario, this.pelicula.id)
+			this.peliculasService.delFav(this.pelicula.id)
 				.subscribe({
 					next: () => {
 						this.isFav = false;
@@ -69,7 +68,7 @@ export class PeliculaPageComponent implements OnInit {
 					}
 				});
 		} else {
-			this.peliculasService.addFav(this.idUsuario, this.pelicula.id)
+			this.peliculasService.addFav(this.pelicula.id)
 				.subscribe({
 					next: () => {
 						this.isFav = true;

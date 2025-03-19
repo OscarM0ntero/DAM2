@@ -78,7 +78,6 @@ export class LoginPageComponent implements OnInit {
 				if (RESPONSE.data.token) {
 					localStorage.setItem('token', RESPONSE.data.token);
 					localStorage.setItem('usuario', RESPONSE.data.usuario);
-					localStorage.setItem('id_usuario', RESPONSE.data.id_usuario);
 					localStorage.setItem('nombre_publico', RESPONSE.data.nombre_publico);
 					localStorage.setItem('permisos', RESPONSE.data.id_rol);
 					this.commonService.headers = new HttpHeaders({

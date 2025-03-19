@@ -10,12 +10,11 @@ import { PeliculasService } from '../../services/peliculas.service';
 export class FavListPageComponent implements OnInit {
 
 	peliculasFav: Pelicula[] = [];
-	idUsuario: number = Number(localStorage.getItem('id_usuario'));
 
 	constructor(private peliculasService: PeliculasService,) { }
 
 	ngOnInit(): void {
-		this.peliculasService.getPeliculasFav(this.idUsuario)
+		this.peliculasService.getPeliculasFav()
 			.subscribe({
 				next: (peliculas) => {
 					this.peliculasFav = peliculas;
