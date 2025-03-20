@@ -7,9 +7,9 @@
 <div *ngIf="pelicula; else divLoading" class="pelicula-background"
 	[ngStyle]="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.95)), url(' + pelicula.background + ')'}">
 	<div class="pelicula-container">
-		<div class="pelicula-card mat-elevation-z8">
+		<div class="pelicula-card">
 			<div class="backButton">
-				<button mat-button mat-flat-button color="warn" (click)="goBack()">
+				<button mat-button mat-flat-button class="backBtn" color="warn" (click)="goBack()">
 					<mat-icon>arrow_back</mat-icon>
 					Atrás
 				</button>
@@ -37,11 +37,11 @@
 
 					<div class="pelicula-actions">
 						<div class="fav-btn">
-							<button mat-fab 
-							        color="{{ isFav ? 'accent' : 'warn' }}" 
-							        matTooltip="{{ isFav ? 'Eliminar de favoritos' : 'Añadir a favoritos' }}" 
-							        matTooltipPosition="above" 
-							        (click)="toggleFav()" 
+							<button mat-fab
+							        color="{{ isFav ? 'accent' : 'warn' }}"
+							        matTooltip="{{ isFav ? 'Eliminar de favoritos' : 'Añadir a favoritos' }}"
+							        matTooltipPosition="above"
+							        (click)="toggleFav()"
 							        [disabled]="!pelicula">
 								<mat-icon class="big-icon">{{ isFav ? 'check' : 'favorite' }}</mat-icon>
 							</button>
