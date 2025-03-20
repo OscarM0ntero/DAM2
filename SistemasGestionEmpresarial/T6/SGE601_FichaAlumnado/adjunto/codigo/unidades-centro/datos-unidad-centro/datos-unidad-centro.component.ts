@@ -49,9 +49,9 @@ export class DatosUnidadCentroComponent implements OnInit {
 
 	async save() {
 		const RESPONSE = await this.unidadesCentroService.editUnidadCentro(this.unidadesCentroService.unidadCentro).toPromise();
-		if (RESPONSE.ok) {
+		if (RESPONSE.status) {
 			this.snackBar.open(RESPONSE.message, CLOSE, { duration: 5000 });
-			this.dialogRef.close({ ok: RESPONSE.ok, unidadCentro: this.datosEditarUnidadCentro.unidadCentro });
+			this.dialogRef.close({ ok: RESPONSE.status, unidadCentro: this.datosEditarUnidadCentro.unidadCentro });
 			//this.entidadService.entidades = (await this.entidadService.getAllEntidades().toPromise()).data;
 		} else {
 			this.snackBar.open(RESPONSE.message, CLOSE, { duration: 5000 });

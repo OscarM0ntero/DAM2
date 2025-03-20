@@ -49,9 +49,9 @@ export class AddUnidadCentroComponent implements OnInit {
 		  const RESPONSE = await this.servicioUnidadesCentro.addUnidadCentro(unidadCentro).toPromise();
 		  console.log("Respuesta del backend:", RESPONSE);
 	  
-		  if (RESPONSE.ok) {
+		  if (RESPONSE.status) {
 			this.snackBar.open(RESPONSE.message, CLOSE, { duration: 5000 });
-			this.dialogRef.close({ ok: RESPONSE.ok, data: RESPONSE.data });
+			this.dialogRef.close({ ok: RESPONSE.status, data: RESPONSE.data });
 		  } else {
 			this.snackBar.open(RESPONSE.message, CLOSE, { duration: 5000 });
 		  }

@@ -31,6 +31,9 @@ export class UnidadesCentroComponent implements OnInit {
 	unidadCentroFilter = new FormControl();
 	idCicloFilter = new FormControl();
 	observacionesFilter = new FormControl();
+	ciclos: Ciclo[];
+
+
 
 	displayedColumns: string[] = ['unidad_centro', 'id_ciclo', 'observaciones', 'actions'];
 
@@ -44,6 +47,7 @@ export class UnidadesCentroComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.getUnidadesCentros();
+		this.getCiclos();
 	}
 
 	async getUnidadesCentros() {
@@ -101,7 +105,7 @@ export class UnidadesCentroComponent implements OnInit {
 
 	async datosUnidadCentro(unidadCentro: UnidadCentro) {
 		const UNIDAD_CENTRO = unidadCentro;
-		const CICLOS = await this.getCiclos();
+
 
 		if (UNIDAD_CENTRO) {
 			const dialogRef = this.dialog.open(DatosUnidadCentroComponent, {
@@ -111,7 +115,7 @@ export class UnidadesCentroComponent implements OnInit {
 				disableClose: true,
 				data: {
 					unidadCentro: UNIDAD_CENTRO,
-					ciclos: CICLOS,
+					ciclos: this.ciclos,
 				}
 			});
 
@@ -119,12 +123,19 @@ export class UnidadesCentroComponent implements OnInit {
 		}
 	}
 
+
+
 	async getCiclos() {
 		const RESPONSE = await this.servicioCiclos.getAllCiclos().toPromise();
 		if (RESPONSE.ok) {
 			console.log("OK");
-			return RESPONSE.data as Ciclo[];
+			this.ciclos = RESPONSE.data as Ciclo[];
 		}
+	}
+
+	getCicloById(id_ciclo: number): string | undefined {
+		const ciclo = this.ciclos.find(c => c.id_ciclo === id_ciclo);
+		return ciclo ? ciclo.ciclo : undefined;
 	}
 }
 

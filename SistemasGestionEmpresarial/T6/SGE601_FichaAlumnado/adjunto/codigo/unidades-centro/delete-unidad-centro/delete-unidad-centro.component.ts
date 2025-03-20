@@ -32,9 +32,9 @@ export class DeleteUnidadCentroComponent implements OnInit {
 
   async confirmDelete() {
     const RESPONSE = await this.servicioUnidadesCentro.deleteUnidadCentro(this.unidadCentro.id_unidad_centro).toPromise();
-    if (RESPONSE.ok) {
+    if (RESPONSE.status) {
       this.snackBar.open(RESPONSE.message, CLOSE, { duration: 5000 });
-      this.dialogRef.close({ ok: RESPONSE.ok, data: RESPONSE.data });
+      this.dialogRef.close({ ok: RESPONSE.status, data: RESPONSE.data });
     } else { this.snackBar.open(RESPONSE.message, CLOSE, { duration: 5000 }); }
   }
 

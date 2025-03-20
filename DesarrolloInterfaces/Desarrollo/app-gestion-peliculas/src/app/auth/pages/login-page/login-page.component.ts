@@ -33,7 +33,7 @@ export class LoginPageComponent implements OnInit {
 		this.setForm();
 
 		this.loginForm.get('username')?.valueChanges
-			.pipe(debounceTime(500))
+			.pipe(debounceTime(1500))
 			.subscribe(value => {
 				if (this.loginForm.get('username')?.invalid) {
 					this.snackBar.open('Correo electrónico inválido', 'Cerrar', { duration: 2000 });
