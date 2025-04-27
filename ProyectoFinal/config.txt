@@ -1,0 +1,28 @@
+
+
+
+BBDD
+
+	# Actualizar los repositorios
+	sudo apt update
+
+	# Instalar MySQL Server
+	sudo apt install mysql-server
+
+	# Verificar que MySQL se ha instalado correctamente
+	sudo systemctl status mysql
+
+	#Para asegurarte de que MySQL está correctamente configurado, ejecuta:
+	sudo mysql_secure_installation
+
+	# Instalar PHP y las dependencias necesarias
+	sudo apt install php php-mbstring php-xml php-zip php-mysqli
+
+	# Instalar phpMyAdmin
+	sudo apt install phpmyadmin
+	
+	usuario phpmyadmin en mysql
+	phpmyadmin@localhost	Phpmyadmin77$
+	
+	usuario root en mysql
+	root					Mysql77$
