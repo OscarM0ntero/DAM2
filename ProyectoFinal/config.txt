@@ -22,7 +22,7 @@ BBDD
 	sudo apt install phpmyadmin
 	
 	usuario phpmyadmin en mysql
-	phpmyadmin@localhost	Phpmyadmin77$
+	phpmyadmin@localhost	Phpmyadmin77.
 	
 	usuario root en mysql
 	root					Mysql77$
